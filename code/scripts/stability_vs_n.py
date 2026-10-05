@@ -79,8 +79,10 @@ def draw_disjoint(groups, m, rng):
 
 def disjoint_arm(X, y, groups, m, rng):
     sets = draw_disjoint(groups, m, rng)
-    rankings = {meth: [fn(X.iloc[ix], y.iloc[ix], None, None)[0] for ix in sets] for meth, fn in RANKERS_N.items()}
-    return rankings, [int(len(ix)) for ix in sets]
+    out = {meth: [fn(X.iloc[ix], y.iloc[ix], None, None) for ix in sets] for meth, fn in RANKERS_N.items()}
+    rankings = {meth: [o[0] for o in res] for meth, res in out.items()}
+    lasso = [[o[1]["n_entered"], o[1]["need"]] for o in out["LASSO"]]
+    return rankings, [int(len(ix)) for ix in sets], lasso
 
 
 def summarise(recs, feats, p):
@@ -141,10 +143,10 @@ if __name__ == "__main__":
             continue
         t0 = time.time()
         cv_rank, n_entered, cv_rows = replicate(X, y, g, b, n_students=n, seed=seed(n, b, 0), rankers=RANKERS_N)
-        dj_rank, dj_rows = disjoint_arm(X, y, g, m, np.random.default_rng(seed(n, b, 1)))
+        dj_rank, dj_rows, dj_lasso = disjoint_arm(X, y, g, m, np.random.default_rng(seed(n, b, 1)))
         rec = {"b": b, "sha": sha, "data_sha256": data_sha,
                "cv": {"rankings": cv_rank, "train_rows": cv_rows, "lasso_n_entered": n_entered},
-               "disjoint": {"rankings": dj_rank, "rows": dj_rows}}
+               "disjoint": {"rankings": dj_rank, "rows": dj_rows, "lasso_n_entered": dj_lasso}}
         with open(path, "a") as f:
             f.write(json.dumps(rec) + "\n")
         print(f"[{name}] rep {b} {time.time() - t0:.0f}s", flush=True)
@@ -152,13 +154,13 @@ if __name__ == "__main__":
     recs = sorted(read_jsonl(path), key=lambda r: r["b"])
     assert [r["b"] for r in recs] == list(range(a.n_rep)), "replicates incomplete or duplicated"
     check_same_commit([r["sha"] for r in recs], name)
-    n_ent = [e for r in recs for e in r["cv"]["lasso_n_entered"]]
+    short = lambda arm: int(sum(e < need for r in recs for e, need in r[arm]["lasso_n_entered"]))
     rows = lambda key, arm: [x for r in recs for x in r[arm][key]]
     res = {"n_rep": a.n_rep, "n_students": n, "n_dev_students": n_dev, "disjoint_set_students": m,
            "cv_train_rows": {"min": min(rows("train_rows", "cv")), "max": max(rows("train_rows", "cv"))},
            "disjoint_rows": {"min": min(rows("rows", "disjoint")), "max": max(rows("rows", "disjoint"))},
            "p": X.shape[1], "methods": ALL_METHODS,
-           "lasso_folds_short": int(sum(e < need for e, need in n_ent)),
+           "lasso_sets_short": {"cv": short("cv"), "disjoint": short("disjoint")},
            "note": "descriptive: replicates overlap in students; SD is resampling spread, not an SE",
            "provenance": provenance(with_data=True), **summarise(recs, sorted(X.columns), X.shape[1])}
     with open(os.path.join(a.output_dir, f"{name}.json"), "w") as f:
