@@ -175,18 +175,19 @@ Each stored output records, in its `provenance` block:
   as `fold_sha` and `boot_sha`.
 - `provenance.git_sha`: a commit in that working repository.
 
-Neither hash resolves in this repository, which was published as a fresh
+For outputs written before this repository existed, neither hash resolves here: it was published as a fresh
 history containing the final code. The scripts here differ from those working
 versions only in comments, docstrings, two output label strings, and the move
 of eight helper functions into `temporal_design.py`.
 
-The stored outputs carry three `code_sha` values:
+The stored outputs carry four `code_sha` values. The first three come from the working repository; the fourth is the tree of commit `54bd75c` in this repository:
 
 | `code_sha` | Outputs |
 |---|---|
 | `f9c197105763537e3440e35c28bd0973a645d82d` | CV, holdout and bootstrap at days 30/60/90 and xAPI; the lag-14 CV and holdout in `temporal_design/` |
 | `0b339de1ea1c3453d88de8c18d3fe28fc0e5e007` | `oulad_day*_cross_cohort*` |
 | `318d9c08304b03f41970381093a3c44d1e540557` | everything in `lag14_boot/` |
+| `37aa495ce98006deac8309c6b330cd12ee6e0d52` | `oulad_day*_stability_n*`, `oulad_day*_cross_cohort_tmalag14*`, `oulad_day*_rfe_mechanism.json` |
 
 `reproduce_fold.py` re-fits the first stored fold with the code in this
 repository. Results:

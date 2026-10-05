@@ -1,0 +1,799 @@
+{
+  "cutoff": 60,
+  "fold_sha": "f9c197105763537e3440e35c28bd0973a645d82d",
+  "high_r": 0.7,
+  "note": "descriptive: fold pairs share training rows",
+  "provenance": {
+    "git_sha": "54bd75cb527dfd388a2c899c6ef5b0d1e318e956",
+    "code_sha": "37aa495ce98006deac8309c6b330cd12ee6e0d52",
+    "git_dirty": false,
+    "versions": {
+      "numpy": "2.2.6",
+      "pandas": "2.3.0",
+      "sklearn": "1.7.0",
+      "xgboost": "3.0.2",
+      "shap": "0.48.0"
+    },
+    "FS_N_JOBS": -1,
+    "data_sha256": {
+      "assessments.csv": "9ce92381e4a0ac457f8e251b2eb2c179ed51e023ab30d1d671a0268bd62316ba",
+      "courses.csv": "4f16eee7454b15e109b0a21a0e43be820e6846ed6f9301bb7feb5ab5ad737a75",
+      "studentAssessment.csv": "b1839e17618a5de36b6d189a242d3123f7939a56c8c9ccef0c17b9199c614a6b",
+      "studentInfo.csv": "815fbc3e2de29f79900bc63f0345a35db62c9146afaa1d86e7107b8b3beffc60",
+      "studentRegistration.csv": "bbc87a0de1fe2a9ec6decce1ca6c1a02cf17b54ad3bdcc673fc6413b41c61d47",
+      "studentVle.csv": "52668253d876c5becbcb72185977152700cecab2942aca807fecc3dd54b937f0",
+      "vle.csv": "d1b28303dea802ad87b4484e1196e878e06824850b9a4fe8aa34693439fe87e9",
+      "xapi_edu_data.csv": "7ec40f0d14e616233d8ceff1ccbaa6d31947d537a1c5befb29e9fb00b453cee3"
+    }
+  },
+  "per_k": {
+    "5": {
+      "substitution_spearman": {
+        "MI": {
+          "swapped_mean_maxabsr": 0.3713108065946559,
+          "reference_mean_maxabsr": 0.39361531465407673,
+          "swaps_per_pair": 0.04,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "RFE": {
+          "swapped_mean_maxabsr": 0.13430374538424186,
+          "reference_mean_maxabsr": 0.1680158447101455,
+          "swaps_per_pair": 0.6644897959183673,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "LASSO": {
+          "swapped_mean_maxabsr": 0.5084123950739992,
+          "reference_mean_maxabsr": 0.2610122936936217,
+          "swaps_per_pair": 0.04,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "ANOVA": {
+          "swapped_mean_maxabsr": NaN,
+          "reference_mean_maxabsr": NaN,
+          "swaps_per_pair": 0.0,
+          "share_swapped_ge_0.7": NaN
+        },
+        "SHAP": {
+          "swapped_mean_maxabsr": 0.32884406254165516,
+          "reference_mean_maxabsr": 0.2446449192276423,
+          "swaps_per_pair": 0.6857142857142857,
+          "share_swapped_ge_0.7": 0.21666666666666667
+        }
+      },
+      "substitution_pearson": {
+        "MI": {
+          "swapped_mean_maxabsr": 0.22306294632803172,
+          "reference_mean_maxabsr": 0.24681580741351938,
+          "swaps_per_pair": 0.04,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "RFE": {
+          "swapped_mean_maxabsr": 0.1410684213450856,
+          "reference_mean_maxabsr": 0.14600968758187247,
+          "swaps_per_pair": 0.6644897959183673,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "LASSO": {
+          "swapped_mean_maxabsr": 0.26720708040679453,
+          "reference_mean_maxabsr": 0.22803381801062697,
+          "swaps_per_pair": 0.04,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "ANOVA": {
+          "swapped_mean_maxabsr": NaN,
+          "reference_mean_maxabsr": NaN,
+          "swaps_per_pair": 0.0,
+          "share_swapped_ge_0.7": NaN
+        },
+        "SHAP": {
+          "swapped_mean_maxabsr": 0.36050463473795086,
+          "reference_mean_maxabsr": 0.22269696403245656,
+          "swaps_per_pair": 0.6857142857142857,
+          "share_swapped_ge_0.7": 0.21666666666666667
+        }
+      },
+      "auc_gap": {
+        "xgb_RFE_minus_MI": {
+          "mean": 0.014496891790844653,
+          "min": -0.0037742007719956394,
+          "max": 0.024995313011156872
+        },
+        "xgb_RFE_minus_LASSO": {
+          "mean": 0.005324766511453618,
+          "min": -0.004718949693890306,
+          "max": 0.02390453670774595
+        },
+        "xgb_RFE_minus_ANOVA": {
+          "mean": 0.004570957373994029,
+          "min": -0.007231310744555408,
+          "max": 0.01746915693028217
+        },
+        "xgb_RFE_minus_SHAP": {
+          "mean": -0.008058535431107643,
+          "min": -0.022866134979190655,
+          "max": 0.00221958333997474
+        },
+        "rf_RFE_minus_MI": {
+          "mean": 0.01462121417370254,
+          "min": -0.0012005025182846296,
+          "max": 0.025785983737652285
+        },
+        "rf_RFE_minus_LASSO": {
+          "mean": 0.007174547756267007,
+          "min": -0.002588409151661031,
+          "max": 0.02865378995191159
+        },
+        "rf_RFE_minus_ANOVA": {
+          "mean": 0.006880178491808391,
+          "min": -0.004524941834647245,
+          "max": 0.021253879582708746
+        },
+        "rf_RFE_minus_SHAP": {
+          "mean": -0.007081818172160352,
+          "min": -0.02231977058055523,
+          "max": 0.002136469934579499
+        },
+        "lr_RFE_minus_MI": {
+          "mean": -0.00992774467230389,
+          "min": -0.02606653763642175,
+          "max": 0.005789840721012851
+        },
+        "lr_RFE_minus_LASSO": {
+          "mean": -0.014673032520918101,
+          "min": -0.024214579210275478,
+          "max": -0.00353392304179323
+        },
+        "lr_RFE_minus_ANOVA": {
+          "mean": -0.011207360992833032,
+          "min": -0.02649907077087532,
+          "max": 0.004860710132895019
+        },
+        "lr_RFE_minus_SHAP": {
+          "mean": -0.014434893739898877,
+          "min": -0.028797988154782073,
+          "max": -0.00011521598917008102
+        }
+      }
+    },
+    "10": {
+      "substitution_spearman": {
+        "MI": {
+          "swapped_mean_maxabsr": 0.4271473773870817,
+          "reference_mean_maxabsr": 0.23261907578929414,
+          "swaps_per_pair": 0.7869387755102041,
+          "share_swapped_ge_0.7": 0.13070539419087138
+        },
+        "RFE": {
+          "swapped_mean_maxabsr": 0.15057631873678243,
+          "reference_mean_maxabsr": 0.16922552296437407,
+          "swaps_per_pair": 0.9330612244897959,
+          "share_swapped_ge_0.7": 0.033245844269466314
+        },
+        "LASSO": {
+          "swapped_mean_maxabsr": 0.39356014251911986,
+          "reference_mean_maxabsr": 0.23693019092577586,
+          "swaps_per_pair": 0.6848979591836735,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "ANOVA": {
+          "swapped_mean_maxabsr": 0.20735236403712337,
+          "reference_mean_maxabsr": 0.17568243996031377,
+          "swaps_per_pair": 0.31265306122448977,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "SHAP": {
+          "swapped_mean_maxabsr": 0.1709398032348967,
+          "reference_mean_maxabsr": 0.18552584029510466,
+          "swaps_per_pair": 0.4563265306122449,
+          "share_swapped_ge_0.7": 0.0
+        }
+      },
+      "substitution_pearson": {
+        "MI": {
+          "swapped_mean_maxabsr": 0.301173036377426,
+          "reference_mean_maxabsr": 0.16517703976425838,
+          "swaps_per_pair": 0.7869387755102041,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "RFE": {
+          "swapped_mean_maxabsr": 0.13532719853862146,
+          "reference_mean_maxabsr": 0.12979163840977417,
+          "swaps_per_pair": 0.9330612244897959,
+          "share_swapped_ge_0.7": 0.033245844269466314
+        },
+        "LASSO": {
+          "swapped_mean_maxabsr": 0.34507352464217755,
+          "reference_mean_maxabsr": 0.1887840946377973,
+          "swaps_per_pair": 0.6848979591836735,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "ANOVA": {
+          "swapped_mean_maxabsr": 0.12139339564750695,
+          "reference_mean_maxabsr": 0.11808171835031034,
+          "swaps_per_pair": 0.31265306122448977,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "SHAP": {
+          "swapped_mean_maxabsr": 0.08833599934352586,
+          "reference_mean_maxabsr": 0.14046982192045485,
+          "swaps_per_pair": 0.4563265306122449,
+          "share_swapped_ge_0.7": 0.0
+        }
+      },
+      "auc_gap": {
+        "xgb_RFE_minus_MI": {
+          "mean": 0.009627598912127819,
+          "min": -0.0015559469091710465,
+          "max": 0.0190523153645491
+        },
+        "xgb_RFE_minus_LASSO": {
+          "mean": 0.01523117942918885,
+          "min": 0.004638227076531942,
+          "max": 0.02478083430664557
+        },
+        "xgb_RFE_minus_ANOVA": {
+          "mean": 0.016032265016276276,
+          "min": 0.008259669871296116,
+          "max": 0.024238506204203203
+        },
+        "xgb_RFE_minus_SHAP": {
+          "mean": -0.00026017075455261776,
+          "min": -0.011517904087646524,
+          "max": 0.006283041498594155
+        },
+        "rf_RFE_minus_MI": {
+          "mean": 0.010643482322715558,
+          "min": -0.001744201493132258,
+          "max": 0.021846555474982043
+        },
+        "rf_RFE_minus_LASSO": {
+          "mean": 0.014840571334486463,
+          "min": 0.0029319204480149352,
+          "max": 0.024015769097723294
+        },
+        "rf_RFE_minus_ANOVA": {
+          "mean": 0.017320082210497464,
+          "min": 0.007546503816330263,
+          "max": 0.028510128112158695
+        },
+        "rf_RFE_minus_SHAP": {
+          "mean": 0.0006449109019437093,
+          "min": -0.007774575706442577,
+          "max": 0.008064448985770523
+        },
+        "lr_RFE_minus_MI": {
+          "mean": 0.006846165228872798,
+          "min": -0.00536602100033734,
+          "max": 0.019259431564618845
+        },
+        "lr_RFE_minus_LASSO": {
+          "mean": -0.0023573225498220917,
+          "min": -0.00938445956925782,
+          "max": 0.005787973467189733
+        },
+        "lr_RFE_minus_ANOVA": {
+          "mean": -0.03235682260324215,
+          "min": -0.042860132430430964,
+          "max": -0.019552641301318507
+        },
+        "lr_RFE_minus_SHAP": {
+          "mean": -0.0011197000267331014,
+          "min": -0.010035410202824613,
+          "max": 0.007395469024123802
+        }
+      }
+    },
+    "15": {
+      "substitution_spearman": {
+        "MI": {
+          "swapped_mean_maxabsr": 0.24439275829420207,
+          "reference_mean_maxabsr": 0.09825037319463696,
+          "swaps_per_pair": 1.1151020408163266,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "RFE": {
+          "swapped_mean_maxabsr": 0.1398223126432193,
+          "reference_mean_maxabsr": 0.1563482346351642,
+          "swaps_per_pair": 2.444081632653061,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "LASSO": {
+          "swapped_mean_maxabsr": 0.25478720233352514,
+          "reference_mean_maxabsr": 0.12336701011316356,
+          "swaps_per_pair": 1.3722448979591837,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "ANOVA": {
+          "swapped_mean_maxabsr": 0.0757975199200773,
+          "reference_mean_maxabsr": 0.06975528096860698,
+          "swaps_per_pair": 0.4440816326530612,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "SHAP": {
+          "swapped_mean_maxabsr": 0.3685465851167522,
+          "reference_mean_maxabsr": 0.1474263723689316,
+          "swaps_per_pair": 0.15510204081632653,
+          "share_swapped_ge_0.7": 0.015789473684210527
+        }
+      },
+      "substitution_pearson": {
+        "MI": {
+          "swapped_mean_maxabsr": 0.19046425568427325,
+          "reference_mean_maxabsr": 0.07931565415198047,
+          "swaps_per_pair": 1.1151020408163266,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "RFE": {
+          "swapped_mean_maxabsr": 0.10492208980093615,
+          "reference_mean_maxabsr": 0.11896312909333388,
+          "swaps_per_pair": 2.444081632653061,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "LASSO": {
+          "swapped_mean_maxabsr": 0.15961560462230825,
+          "reference_mean_maxabsr": 0.08765895022970371,
+          "swaps_per_pair": 1.3722448979591837,
+          "share_swapped_ge_0.7": 0.01784651992861392
+        },
+        "ANOVA": {
+          "swapped_mean_maxabsr": 0.04447918062293441,
+          "reference_mean_maxabsr": 0.05254392155801865,
+          "swaps_per_pair": 0.4440816326530612,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "SHAP": {
+          "swapped_mean_maxabsr": 0.3815084431499496,
+          "reference_mean_maxabsr": 0.1228852815776957,
+          "swaps_per_pair": 0.15510204081632653,
+          "share_swapped_ge_0.7": 0.0
+        }
+      },
+      "auc_gap": {
+        "xgb_RFE_minus_MI": {
+          "mean": 0.007421098206826602,
+          "min": 1.8952374024050478e-05,
+          "max": 0.016915921111914645
+        },
+        "xgb_RFE_minus_LASSO": {
+          "mean": 0.013986074698511597,
+          "min": 0.0017671573716443456,
+          "max": 0.023863871898942346
+        },
+        "xgb_RFE_minus_ANOVA": {
+          "mean": 0.006347003190560767,
+          "min": 0.002500011415577319,
+          "max": 0.010404890182908688
+        },
+        "xgb_RFE_minus_SHAP": {
+          "mean": -0.0010667484790107995,
+          "min": -0.0057404635099796986,
+          "max": 0.0019309738718786829
+        },
+        "rf_RFE_minus_MI": {
+          "mean": 0.008954698180167382,
+          "min": 0.0021629840817296575,
+          "max": 0.017179709989776693
+        },
+        "rf_RFE_minus_LASSO": {
+          "mean": 0.012220183903504852,
+          "min": 0.002983238412111122,
+          "max": 0.021745831629768952
+        },
+        "rf_RFE_minus_ANOVA": {
+          "mean": 0.0077668900039811525,
+          "min": 0.0020179111686229323,
+          "max": 0.013216241999891354
+        },
+        "rf_RFE_minus_SHAP": {
+          "mean": 0.0009670041313446664,
+          "min": -0.0036785338984027804,
+          "max": 0.005532455414069548
+        },
+        "lr_RFE_minus_MI": {
+          "mean": -0.027648105971943268,
+          "min": -0.03868147857316062,
+          "max": -0.015515057230268359
+        },
+        "lr_RFE_minus_LASSO": {
+          "mean": -0.03261944163261201,
+          "min": -0.04681234573668758,
+          "max": 0.00490545106262763
+        },
+        "lr_RFE_minus_ANOVA": {
+          "mean": -0.03316879352238991,
+          "min": -0.045909596560312016,
+          "max": -0.02007364223083541
+        },
+        "lr_RFE_minus_SHAP": {
+          "mean": 0.001286315655595378,
+          "min": -0.0064233706349784425,
+          "max": 0.00993286879350297
+        }
+      }
+    },
+    "20": {
+      "substitution_spearman": {
+        "MI": {
+          "swapped_mean_maxabsr": 0.15924434406824273,
+          "reference_mean_maxabsr": 0.04216500508018839,
+          "swaps_per_pair": 1.3322448979591837,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "RFE": {
+          "swapped_mean_maxabsr": 0.2121422639743011,
+          "reference_mean_maxabsr": 0.1292339568230654,
+          "swaps_per_pair": 3.9257142857142857,
+          "share_swapped_ge_0.7": 0.040964857558744024
+        },
+        "LASSO": {
+          "swapped_mean_maxabsr": 0.1936715237482737,
+          "reference_mean_maxabsr": 0.10337914014442806,
+          "swaps_per_pair": 1.0857142857142856,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "ANOVA": {
+          "swapped_mean_maxabsr": 0.059961412252912336,
+          "reference_mean_maxabsr": 0.0528779883064882,
+          "swaps_per_pair": 0.8489795918367347,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "SHAP": {
+          "swapped_mean_maxabsr": 0.04394746133922228,
+          "reference_mean_maxabsr": 0.030725445069155047,
+          "swaps_per_pair": 0.626938775510204,
+          "share_swapped_ge_0.7": 0.0
+        }
+      },
+      "substitution_pearson": {
+        "MI": {
+          "swapped_mean_maxabsr": 0.12836870765922237,
+          "reference_mean_maxabsr": 0.029096527239524057,
+          "swaps_per_pair": 1.3322448979591837,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "RFE": {
+          "swapped_mean_maxabsr": 0.16778799404644384,
+          "reference_mean_maxabsr": 0.10750501354312955,
+          "swaps_per_pair": 3.9257142857142857,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "LASSO": {
+          "swapped_mean_maxabsr": 0.120731593906566,
+          "reference_mean_maxabsr": 0.06845276351130036,
+          "swaps_per_pair": 1.0857142857142856,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "ANOVA": {
+          "swapped_mean_maxabsr": 0.05848639148908828,
+          "reference_mean_maxabsr": 0.04553707902128357,
+          "swaps_per_pair": 0.8489795918367347,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "SHAP": {
+          "swapped_mean_maxabsr": 0.03695708827942513,
+          "reference_mean_maxabsr": 0.025653943120211173,
+          "swaps_per_pair": 0.626938775510204,
+          "share_swapped_ge_0.7": 0.0
+        }
+      },
+      "auc_gap": {
+        "xgb_RFE_minus_MI": {
+          "mean": 0.002666654044583687,
+          "min": -0.0030198006992421256,
+          "max": 0.006624393567976172
+        },
+        "xgb_RFE_minus_LASSO": {
+          "mean": 0.002485235901306946,
+          "min": -0.0038722783946405492,
+          "max": 0.007261093226094029
+        },
+        "xgb_RFE_minus_ANOVA": {
+          "mean": 0.0033236266601737465,
+          "min": -0.004275479188635911,
+          "max": 0.00858088122224121
+        },
+        "xgb_RFE_minus_SHAP": {
+          "mean": -0.0015728513926465083,
+          "min": -0.006295690847903268,
+          "max": 0.0014451900000914675
+        },
+        "rf_RFE_minus_MI": {
+          "mean": 0.0037545311048417717,
+          "min": -0.0023964994872567313,
+          "max": 0.007584084120732193
+        },
+        "rf_RFE_minus_LASSO": {
+          "mean": 0.0018225455202355856,
+          "min": -0.0058469730508576845,
+          "max": 0.007403239062122369
+        },
+        "rf_RFE_minus_ANOVA": {
+          "mean": 0.004601598277425994,
+          "min": -0.001141174554928348,
+          "max": 0.010896785109983154
+        },
+        "rf_RFE_minus_SHAP": {
+          "mean": -0.0008672002044454463,
+          "min": -0.0034780730012017314,
+          "max": 0.003144114092337391
+        },
+        "lr_RFE_minus_MI": {
+          "mean": -0.03499235692158347,
+          "min": -0.04706599132135425,
+          "max": -0.0256373025999449
+        },
+        "lr_RFE_minus_LASSO": {
+          "mean": -0.04323701535035845,
+          "min": -0.051166710045860264,
+          "max": -0.03445532036737586
+        },
+        "lr_RFE_minus_ANOVA": {
+          "mean": -0.03454543272725544,
+          "min": -0.04468094983690962,
+          "max": -0.026752511159658043
+        },
+        "lr_RFE_minus_SHAP": {
+          "mean": 0.0005379099733664616,
+          "min": -0.0077747299845706275,
+          "max": 0.007475008034412589
+        }
+      }
+    },
+    "25": {
+      "substitution_spearman": {
+        "MI": {
+          "swapped_mean_maxabsr": 0.0939172349557354,
+          "reference_mean_maxabsr": 0.04580466891372843,
+          "swaps_per_pair": 1.7216326530612245,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "RFE": {
+          "swapped_mean_maxabsr": 0.16179960641863764,
+          "reference_mean_maxabsr": 0.0969577013126883,
+          "swaps_per_pair": 3.9151020408163264,
+          "share_swapped_ge_0.7": 0.03158882402001668
+        },
+        "LASSO": {
+          "swapped_mean_maxabsr": 0.057314436387753395,
+          "reference_mean_maxabsr": 0.0800607420257782,
+          "swaps_per_pair": 1.516734693877551,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "ANOVA": {
+          "swapped_mean_maxabsr": 0.039724307716475935,
+          "reference_mean_maxabsr": 0.042558695465390865,
+          "swaps_per_pair": 0.8204081632653061,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "SHAP": {
+          "swapped_mean_maxabsr": 0.06532392279999216,
+          "reference_mean_maxabsr": 0.040458861971554745,
+          "swaps_per_pair": 0.6938775510204082,
+          "share_swapped_ge_0.7": 0.0
+        }
+      },
+      "substitution_pearson": {
+        "MI": {
+          "swapped_mean_maxabsr": 0.06382757722990721,
+          "reference_mean_maxabsr": 0.039509772825697675,
+          "swaps_per_pair": 1.7216326530612245,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "RFE": {
+          "swapped_mean_maxabsr": 0.13541027636708824,
+          "reference_mean_maxabsr": 0.08312401139616599,
+          "swaps_per_pair": 3.9151020408163264,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "LASSO": {
+          "swapped_mean_maxabsr": 0.038823288706918514,
+          "reference_mean_maxabsr": 0.06316699545208002,
+          "swaps_per_pair": 1.516734693877551,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "ANOVA": {
+          "swapped_mean_maxabsr": 0.03931937768472336,
+          "reference_mean_maxabsr": 0.04000883465719671,
+          "swaps_per_pair": 0.8204081632653061,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "SHAP": {
+          "swapped_mean_maxabsr": 0.036685320205948134,
+          "reference_mean_maxabsr": 0.03658143437792135,
+          "swaps_per_pair": 0.6938775510204082,
+          "share_swapped_ge_0.7": 0.0
+        }
+      },
+      "auc_gap": {
+        "xgb_RFE_minus_MI": {
+          "mean": 0.0019629744485426116,
+          "min": -0.002462111867250205,
+          "max": 0.005959011210770915
+        },
+        "xgb_RFE_minus_LASSO": {
+          "mean": 0.0010111857890138841,
+          "min": -0.0024817229887248438,
+          "max": 0.00567480023432021
+        },
+        "xgb_RFE_minus_ANOVA": {
+          "mean": 0.0025444857501837827,
+          "min": -0.0024647586998324256,
+          "max": 0.0070729885762675915
+        },
+        "xgb_RFE_minus_SHAP": {
+          "mean": -0.0006443545020642393,
+          "min": -0.002806050963704232,
+          "max": 0.00144234524563569
+        },
+        "rf_RFE_minus_MI": {
+          "mean": 0.0025199902692977626,
+          "min": -0.0015327934046101,
+          "max": 0.006274374705997454
+        },
+        "rf_RFE_minus_LASSO": {
+          "mean": 0.00020439275367893693,
+          "min": -0.005256272148916552,
+          "max": 0.004207156078175234
+        },
+        "rf_RFE_minus_ANOVA": {
+          "mean": 0.0030749208478212074,
+          "min": -0.0005424903538374659,
+          "max": 0.00609628389617789
+        },
+        "rf_RFE_minus_SHAP": {
+          "mean": -0.0005656643814788897,
+          "min": -0.0035576371565007037,
+          "max": 0.00220820403941413
+        },
+        "lr_RFE_minus_MI": {
+          "mean": -0.03811197006445138,
+          "min": -0.048621960025572286,
+          "max": -0.028678325632325863
+        },
+        "lr_RFE_minus_LASSO": {
+          "mean": -0.043592241970656254,
+          "min": -0.052397544952555,
+          "max": -0.03515609361995131
+        },
+        "lr_RFE_minus_ANOVA": {
+          "mean": -0.03665298001805597,
+          "min": -0.047023184021001474,
+          "max": -0.02851209215130146
+        },
+        "lr_RFE_minus_SHAP": {
+          "mean": -0.0026039379631015015,
+          "min": -0.00897246520200723,
+          "max": 0.0016320568354449838
+        }
+      }
+    },
+    "30": {
+      "substitution_spearman": {
+        "MI": {
+          "swapped_mean_maxabsr": 0.09797930037221726,
+          "reference_mean_maxabsr": 0.05221515068448412,
+          "swaps_per_pair": 2.2685714285714287,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "RFE": {
+          "swapped_mean_maxabsr": 0.10309979264393221,
+          "reference_mean_maxabsr": 0.09122565312721533,
+          "swaps_per_pair": 4.462040816326531,
+          "share_swapped_ge_0.7": 0.003658982802780827
+        },
+        "LASSO": {
+          "swapped_mean_maxabsr": 0.1072951602161759,
+          "reference_mean_maxabsr": 0.10156846087625074,
+          "swaps_per_pair": 2.253061224489796,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "ANOVA": {
+          "swapped_mean_maxabsr": 0.06339753160534944,
+          "reference_mean_maxabsr": 0.04946685293281888,
+          "swaps_per_pair": 1.896326530612245,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "SHAP": {
+          "swapped_mean_maxabsr": 0.07685080282286608,
+          "reference_mean_maxabsr": 0.04921348316878701,
+          "swaps_per_pair": 1.7991836734693878,
+          "share_swapped_ge_0.7": 0.0
+        }
+      },
+      "substitution_pearson": {
+        "MI": {
+          "swapped_mean_maxabsr": 0.07434257379025073,
+          "reference_mean_maxabsr": 0.04861848545341779,
+          "swaps_per_pair": 2.2685714285714287,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "RFE": {
+          "swapped_mean_maxabsr": 0.08968311413538625,
+          "reference_mean_maxabsr": 0.08049436590791648,
+          "swaps_per_pair": 4.462040816326531,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "LASSO": {
+          "swapped_mean_maxabsr": 0.07605186928071456,
+          "reference_mean_maxabsr": 0.07593435922788207,
+          "swaps_per_pair": 2.253061224489796,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "ANOVA": {
+          "swapped_mean_maxabsr": 0.046072982901768096,
+          "reference_mean_maxabsr": 0.044320624236312674,
+          "swaps_per_pair": 1.896326530612245,
+          "share_swapped_ge_0.7": 0.0
+        },
+        "SHAP": {
+          "swapped_mean_maxabsr": 0.07679612368395025,
+          "reference_mean_maxabsr": 0.04866491937156454,
+          "swaps_per_pair": 1.7991836734693878,
+          "share_swapped_ge_0.7": 0.0
+        }
+      },
+      "auc_gap": {
+        "xgb_RFE_minus_MI": {
+          "mean": 0.0019723207025475055,
+          "min": -0.0022321496672941255,
+          "max": 0.007156875220604708
+        },
+        "xgb_RFE_minus_LASSO": {
+          "mean": 0.0005583698354627953,
+          "min": -0.0030949761474379223,
+          "max": 0.004330521745456228
+        },
+        "xgb_RFE_minus_ANOVA": {
+          "mean": 0.0017603442609462117,
+          "min": -0.0012803908815214315,
+          "max": 0.005386924932133441
+        },
+        "xgb_RFE_minus_SHAP": {
+          "mean": -0.00038599686999071683,
+          "min": -0.0032747732790685546,
+          "max": 0.0009732958910242395
+        },
+        "rf_RFE_minus_MI": {
+          "mean": 0.0021096240770084253,
+          "min": -0.0016496946556193715,
+          "max": 0.006845188049997231
+        },
+        "rf_RFE_minus_LASSO": {
+          "mean": -0.00016930770307182818,
+          "min": -0.005405131048860423,
+          "max": 0.004469713466528802
+        },
+        "rf_RFE_minus_ANOVA": {
+          "mean": 0.002115959889321506,
+          "min": -0.0007310373457812824,
+          "max": 0.005854307089157573
+        },
+        "rf_RFE_minus_SHAP": {
+          "mean": -0.0004477434617707132,
+          "min": -0.003004330056368687,
+          "max": 0.002040926078255789
+        },
+        "lr_RFE_minus_MI": {
+          "mean": -0.03866072352216387,
+          "min": -0.04967835302230217,
+          "max": -0.02785725639802894
+        },
+        "lr_RFE_minus_LASSO": {
+          "mean": -0.04271345846952834,
+          "min": -0.049015362348964975,
+          "max": -0.03257281380480981
+        },
+        "lr_RFE_minus_ANOVA": {
+          "mean": -0.03880911506391377,
+          "min": -0.04953072356203991,
+          "max": -0.02753337346829765
+        },
+        "lr_RFE_minus_SHAP": {
+          "mean": -0.002932787425878296,
+          "min": -0.00871241930572031,
+          "max": 0.0021276695147199876
+        }
+      }
+    }
+  }
+}

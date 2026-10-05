@@ -12,7 +12,8 @@ Writes:
   tab-rfe-contrasts.tex    RFE vs each method, CV estimate and Bonferroni interval
   tab-cross.tex            cross-presentation within / loss (all modules, n = 1,650)
   tab-holdout-all.tex      CV vs holdout AUC with all features, per evaluator
-  tabS_*.tex               supplementary tables
+  tabS_*.tex               supplementary tables (incl. matched-n, cross-cohort and holdout
+                           under the 14-day lag, RFE mechanism)
 """
 import os
 import json
@@ -218,6 +219,63 @@ def tabS_bias(out):
     write(out, "tabS-bias.tex", "\n".join(rows) + "\n")
 
 
+def tabS_matched_n(out):
+    """stability_vs_n.py: CV arm / disjoint arm, grid mean, per cutoff and n."""
+    rows = []
+    for d in DAYS:
+        for n in ["2062", "3800", "all"]:
+            j = load(f"oulad_day{d}_stability_n{n}.json")
+            cv, dj = (j[arm]["summaries"]["grid"]["stability"] for arm in ("cv", "disjoint"))
+            rows.append(f"Day {d} & {j['n_students']:,} & {j['disjoint_set_students']:,} & " + " & ".join(
+                f"{cv[m]['mean']:.2f} / {dj[m]['mean']:.2f}" for m in M + ["GAIN"]) + " \\\\")
+        rows.append("\\addlinespace")
+    write(out, "tabS-matched-n.tex", "\n".join(rows) + "\n")
+
+
+def tabS_cross_lag(out):
+    """cross_cohort.py with and without --tma-lag 14: within / loss dev / loss 2014J, grid mean."""
+    rows = []
+    for d in [30, 60]:
+        for lag in ["", "_tmalag14"]:
+            g = load(f"oulad_day{d}_cross_cohort{lag}.json")
+            s, lp = g["summaries"]["grid"], g["loss_positive"]["grid"]
+            rows.append(f"Day {d}, lag {'14' if lag else '0'} & " + " & ".join(
+                f"{s['within_dev_dev'][m]['mean']:.2f} / {s['loss_dev_dev'][m]['mean']:.2f} / "
+                f"{s['loss_dev_2014J'][m]['mean']:.2f} ({lp[m]['pairs_with_mean_loss_gt0']})" for m in M) + " \\\\")
+    write(out, "tabS-cross-lag.tex", "\n".join(rows) + "\n")
+
+
+def tabS_holdout_lag(out, k=15):
+    """2014J holdout ROC-AUC (XGBoost) with all features and top-k, lag 0 and lag 14."""
+    rows = []
+    for d in [30, 60]:
+        for lag in ["", "_tmalag14"]:
+            h = load(f"oulad_day{d}{lag}_holdout.json")
+            rows.append(f"Day {d}, lag {'14' if lag else '0'} & {h['baseline_all']['xgb']['roc_auc']:.3f} & " + " & ".join(
+                f"{h['methods'][m]['per_k'][str(k)]['xgb']['roc_auc']:.3f}" for m in M) + " \\\\")
+    write(out, "tabS-holdout-lag.tex", "\n".join(rows) + "\n")
+
+
+def tabS_rfe_mechanism(out, k=15):
+    """rfe_mechanism.py at k: swaps per fold pair, swapped / rank-matched reference max|rho| (Spearman);
+    RFE minus each method in test-fold ROC-AUC, mean [min, max] over 50 folds, per evaluator."""
+    rows = []
+    for d in DAYS:
+        r = load(f"oulad_day{d}_rfe_mechanism.json")["per_k"][str(k)]
+        sub = r["substitution_spearman"]
+        cell = lambda v: (f"{v['swaps_per_pair']:.1f}; " + ("--" if v["swapped_mean_maxabsr"] != v["swapped_mean_maxabsr"]
+                          else f"{v['swapped_mean_maxabsr']:.2f} / {v['reference_mean_maxabsr']:.2f}"))
+        rows.append(f"Day {d} & substitution & " + " & ".join(cell(sub[m]) for m in M) + " \\\\")
+        for ev in EV:
+            g = r["auc_gap"]
+            rows.append(f" & {EV[ev]} & " + " & ".join(
+                "--" if m == "RFE" else
+                f"${g[f'{ev}_RFE_minus_{m}']['mean']:+.3f}$ $[{g[f'{ev}_RFE_minus_{m}']['min']:+.3f}, {g[f'{ev}_RFE_minus_{m}']['max']:+.3f}]$"
+                for m in M) + " \\\\")
+        rows.append("\\addlinespace")
+    write(out, "tabS-rfe-mechanism.tex", "\n".join(rows) + "\n")
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default=os.path.join(R, "paper"))
@@ -240,4 +298,8 @@ if __name__ == "__main__":
     tabS_lag(out)
     tabS_cv_auc(out)
     tabS_bias(out)
+    tabS_matched_n(out)
+    tabS_cross_lag(out)
+    tabS_holdout_lag(out)
+    tabS_rfe_mechanism(out)
     print("wrote", sorted(os.listdir(out)))
