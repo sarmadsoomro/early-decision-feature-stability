@@ -58,10 +58,12 @@ def k_sets(p):
     return {"grid": K_GRID, "k_le_p3": list(range(1, p // 3 + 1)), "all": list(range(1, p // 2 + 1))}
 
 
-def replicate(X, y, groups, b, n_students=None):
-    """One half-sample replicate; `n_students` draws that many students instead
-    (OULAD only; used by stability_vs_n.py)."""
-    rng = np.random.default_rng(RANDOM_STATE + b)
+def replicate(X, y, groups, b, n_students=None, seed=None, rankers=None):
+    """One half-sample replicate. stability_vs_n.py passes `n_students` (draw that
+    many students instead of n/2; OULAD only), `seed` (student-draw seed, default
+    RANDOM_STATE + b) and `rankers` ({name: fn}, default the five METHODS)."""
+    rankers = rankers or {m: RANKERS[m] for m in METHODS}
+    rng = np.random.default_rng(RANDOM_STATE + b if seed is None else seed)
     if groups is None:  # xAPI: one row per student
         assert n_students is None, "n_students is for OULAD"
         idx = np.sort(rng.choice(len(X), len(X) // 2, replace=False))
@@ -77,14 +79,15 @@ def replicate(X, y, groups, b, n_students=None):
     Xb, yb = X.iloc[idx].reset_index(drop=True), y.iloc[idx].reset_index(drop=True)
     outer = StratifiedGroupKFold(5, shuffle=True, random_state=b)
     inner = StratifiedGroupKFold(3, shuffle=True, random_state=RANDOM_STATE)
-    rankings, n_entered = {m: [] for m in METHODS}, []
+    rankings, n_entered, train_rows = {m: [] for m in rankers}, [], []
     for f, (tr, _) in enumerate(outer.split(Xb, yb, g)):
-        for m in METHODS:
-            ranking, info = RANKERS[m](Xb.iloc[tr], yb.iloc[tr], g.iloc[tr], inner)
+        train_rows.append(int(len(tr)))
+        for m, fn in rankers.items():
+            ranking, info = fn(Xb.iloc[tr], yb.iloc[tr], g.iloc[tr], inner)
             rankings[m].append(ranking)
             if m == "LASSO":
                 n_entered.append([info["n_entered"], info["need"]])
-    return rankings, n_entered
+    return rankings, n_entered, train_rows
 
 
 def summarise(path, analysis_path, p, feats, n_boot=N_BOOT):
@@ -175,7 +178,7 @@ if __name__ == "__main__":
             if b in done:
                 continue
             t = time.time()
-            rankings, n_entered = replicate(X, y, g, b)
+            rankings, n_entered, _ = replicate(X, y, g, b)
             rec = {"b": b, "rankings": rankings, "lasso_n_entered": n_entered, "sha": sha}
             with open(path, "a") as f:
                 f.write(json.dumps(rec) + "\n")

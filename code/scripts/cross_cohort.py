@@ -201,7 +201,7 @@ if __name__ == "__main__":
     pool = single_presentation_pool(
         meta, pd.read_csv(os.path.join(DATA_DIR, "studentInfo.csv"), usecols=["id_student", "code_presentation"]))
     feats = list(X.columns)
-    design = {"modules": a.modules, "n_students": (a.n_students or N_STUDENTS) if a.modules == "all" else COMMON_QUOTA}
+    design = {"modules": a.modules, "n_students": (a.n_students or N_STUDENTS) if a.modules == "all" else COMMON_QUOTA, "tma_lag": a.tma_lag}
 
     path = os.path.join(a.output_dir, f"{name}.jsonl")
     _lk = lock(path)
@@ -225,7 +225,7 @@ if __name__ == "__main__":
     recs = sorted(read_jsonl(path), key=lambda r: r["r"])
     assert [r["r"] for r in recs] == list(range(a.n_rep)), "repeats incomplete or duplicated"
     check_same_commit([r["sha"] for r in recs], name)
-    res = {"n_rep": a.n_rep, "design": design, "tma_lag": a.tma_lag, "p": len(feats), "presentations": ORDER,
+    res = {"n_rep": a.n_rep, "design": design, "p": len(feats), "presentations": ORDER,
            "note": "descriptive: one sample per presentation; spread over repeats is resampling noise. "
                    "Pairs differ in time, season and (modules=all) module mix; per-set composition in the jsonl.",
            "lasso_path": lasso_shortfall(recs),
