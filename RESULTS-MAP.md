@@ -75,6 +75,6 @@ again into `lag14_boot/` before the bootstrap. The two copies have identical
 | `oulad_dayN_cross_cohort*.jsonl` | One record per repeat: rankings and composition of every drawn set. |
 | `oulad_dayN_holdout_probs.npz` | Holdout predicted probabilities for every method, k and evaluator. |
 | `run_*.log`, `boot_*.log`, `cross_*.log`, `lag14_boot/*.log` | Console output of each run, with per-fold, per-replicate or per-repeat timings. |
-| `oulad_dayN_tmalag14_holdout.json`, `oulad_dayN_tmalag14_holdout_probs.npz` and the lag-14 files in `lag14_boot/` other than the bootstrap summaries | Written by the lag-14 runs; not reported in the manuscript. |
+| `oulad_dayN_tmalag14_holdout_probs.npz` and the lag-14 files in `lag14_boot/` other than the bootstrap summaries | Written by the lag-14 runs; not reported in the manuscript. (`oulad_dayN_tmalag14_holdout.json` feeds `tabS-holdout-lag.tex`.) |
 
 `code/results/DATA-DICTIONARY.md` documents the fields of every output file.

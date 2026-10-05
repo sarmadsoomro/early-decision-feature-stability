@@ -49,3 +49,12 @@ def test_replicate_draws_n_students():
     y = pd.Series(rng.integers(0, 2, 400))
     rankings, _, train_rows = replicate(X, y, g, 0, n_students=50, seed=7, rankers={"ANOVA": rank_anova})
     assert len(rankings["ANOVA"]) == 5 and sum(train_rows) == 4 * 100  # each row trains in 4 of 5 folds
+
+
+def test_reference_is_rank_matched_against_replacements():
+    # k=1. Fold A ranks a, then a2 (rank k+1); fold B ranks c, then d. B \ A = {c}.
+    # Reference for (A, B): A's rank-2 feature a2, scored against {c}; for (B, A): d against {a}.
+    c = _corr()
+    out = substitution([["a", "a2", "b"], ["c", "d", "b"]], c, 1)
+    expected = np.mean([c.loc["a2", "c"], c.loc["d", "a"]])
+    assert np.isclose(out["reference_mean_maxabsr"], expected)
