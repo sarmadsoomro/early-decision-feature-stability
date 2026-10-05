@@ -1,0 +1,2919 @@
+{
+  "params": {
+    "xgb": {
+      "colsample_bytree": 0.8,
+      "learning_rate": 0.02,
+      "max_depth": 6,
+      "min_child_weight": 5,
+      "n_estimators": 300,
+      "subsample": 0.8
+    },
+    "rf": {
+      "max_features": "sqrt",
+      "min_samples_leaf": 10
+    },
+    "lr": {
+      "logisticregression__C": 100
+    }
+  },
+  "baseline_all": {
+    "xgb": {
+      "roc_auc": 0.7730915054683664,
+      "accuracy": 0.7241379310344828,
+      "f1": 0.782429772767937
+    },
+    "rf": {
+      "roc_auc": 0.776958540731693,
+      "accuracy": 0.7242513611615246,
+      "f1": 0.7824608501118568
+    },
+    "lr": {
+      "roc_auc": 0.7418050336215429,
+      "accuracy": 0.7033802177858439,
+      "f1": 0.7605530629063273
+    }
+  },
+  "methods": {
+    "MI": {
+      "ranking": [
+        "avg_score",
+        "max_score",
+        "min_score",
+        "vle_homepage",
+        "vle_forumng",
+        "vle_url",
+        "num_submissions",
+        "vle_quiz",
+        "vle_oucontent",
+        "vle_resource",
+        "vle_subpage",
+        "vle_dualpane",
+        "no_submission",
+        "vle_questionnaire",
+        "imd_band",
+        "vle_ouwiki",
+        "highest_education_Lower Than A Level",
+        "vle_glossary",
+        "num_of_prev_attempts",
+        "studied_credits",
+        "vle_externalquiz",
+        "vle_ouelluminate",
+        "vle_page",
+        "age_band_35-55",
+        "highest_education_HE Qualification",
+        "imd_missing",
+        "vle_dataplus",
+        "disability_Y",
+        "region_South Region",
+        "vle_oucollaborate",
+        "region_Wales",
+        "gender_M",
+        "highest_education_Post Graduate Qualification",
+        "region_North Western Region",
+        "highest_education_No Formal quals",
+        "region_South East Region",
+        "age_band_55=",
+        "vle_sharedsubpage",
+        "region_London Region",
+        "region_North Region",
+        "region_South West Region",
+        "region_Scotland",
+        "vle_repeatactivity",
+        "region_West Midlands Region",
+        "region_Yorkshire Region",
+        "region_Ireland",
+        "region_East Midlands Region"
+      ],
+      "info": {
+        "n_nonzero": 47,
+        "max_tie_top": 1
+      },
+      "per_k": {
+        "5": {
+          "xgb": {
+            "roc_auc": 0.7369126063560174,
+            "accuracy": 0.6896551724137931,
+            "f1": 0.7520840884378398
+          },
+          "faithfulness": 0.8610057830810547,
+          "faithfulness_random": 0.6354577511548996,
+          "faithfulness_gain": 0.22554803192615513,
+          "deletion_start": 0.7165071368217468,
+          "deletion_end": 0.4987852871417999,
+          "concentration_gini": 0.34765729308128357,
+          "rf": {
+            "roc_auc": 0.7269305893820441,
+            "accuracy": 0.6838702359346642,
+            "f1": 0.7466593946004909
+          },
+          "lr": {
+            "roc_auc": 0.7037778866335591,
+            "accuracy": 0.6622050816696915,
+            "f1": 0.7439821182943603
+          },
+          "redundancy": 0.5255810733318815,
+          "redundancy_const_cols": 0
+        },
+        "10": {
+          "xgb": {
+            "roc_auc": 0.7537959362169132,
+            "accuracy": 0.7034936479128857,
+            "f1": 0.757783543365456
+          },
+          "faithfulness": 0.743566632270813,
+          "faithfulness_random": 0.5782408505678177,
+          "faithfulness_gain": 0.16532578170299528,
+          "deletion_start": 0.7310941219329834,
+          "deletion_end": 0.4685506522655487,
+          "concentration_gini": 0.31725525856018066,
+          "rf": {
+            "roc_auc": 0.7558167421464945,
+            "accuracy": 0.7074637023593466,
+            "f1": 0.7654388358344703
+          },
+          "lr": {
+            "roc_auc": 0.701270721219016,
+            "accuracy": 0.6626588021778584,
+            "f1": 0.7434880110401932
+          },
+          "redundancy": 0.3353549792465314,
+          "redundancy_const_cols": 0
+        },
+        "15": {
+          "xgb": {
+            "roc_auc": 0.7602494328579231,
+            "accuracy": 0.7098457350272233,
+            "f1": 0.7638914528336718
+          },
+          "faithfulness": 0.8339182138442993,
+          "faithfulness_random": 0.5856957048177719,
+          "faithfulness_gain": 0.24822250902652743,
+          "deletion_start": 0.7264850735664368,
+          "deletion_end": 0.45294636487960815,
+          "concentration_gini": 0.4218743145465851,
+          "rf": {
+            "roc_auc": 0.759988113516031,
+            "accuracy": 0.709051724137931,
+            "f1": 0.7649592229451113
+          },
+          "lr": {
+            "roc_auc": 0.7234657349513747,
+            "accuracy": 0.6870462794918331,
+            "f1": 0.7431337864258449
+          },
+          "redundancy": 0.28876914764898676,
+          "redundancy_const_cols": 0
+        },
+        "20": {
+          "xgb": {
+            "roc_auc": 0.7655196275102818,
+            "accuracy": 0.7150635208711433,
+            "f1": 0.7698369067253069
+          },
+          "faithfulness": 0.8058568239212036,
+          "faithfulness_random": 0.5890359848737716,
+          "faithfulness_gain": 0.216820839047432,
+          "deletion_start": 0.7362606525421143,
+          "deletion_end": 0.42969948053359985,
+          "concentration_gini": 0.45211586356163025,
+          "rf": {
+            "roc_auc": 0.7716511667199399,
+            "accuracy": 0.7250453720508166,
+            "f1": 0.7803552011598405
+          },
+          "lr": {
+            "roc_auc": 0.7340198721630145,
+            "accuracy": 0.6989564428312159,
+            "f1": 0.754894717399335
+          },
+          "redundancy": 0.20461493968052122,
+          "redundancy_const_cols": 0
+        },
+        "25": {
+          "xgb": {
+            "roc_auc": 0.7696380530716125,
+            "accuracy": 0.7233439201451906,
+            "f1": 0.781744966442953
+          },
+          "faithfulness": 0.8590966463088989,
+          "faithfulness_random": 0.5121230512857438,
+          "faithfulness_gain": 0.34697359502315517,
+          "deletion_start": 0.7471679449081421,
+          "deletion_end": 0.40603041648864746,
+          "concentration_gini": 0.4950982928276062,
+          "rf": {
+            "roc_auc": 0.7730259846897416,
+            "accuracy": 0.7266333938294011,
+            "f1": 0.7850517302889761
+          },
+          "lr": {
+            "roc_auc": 0.7361114907242818,
+            "accuracy": 0.7016787658802178,
+            "f1": 0.7604299508107123
+          },
+          "redundancy": 0.17371452172896887,
+          "redundancy_const_cols": 0
+        },
+        "30": {
+          "xgb": {
+            "roc_auc": 0.7707442140269786,
+            "accuracy": 0.7216424682395645,
+            "f1": 0.781283422459893
+          },
+          "faithfulness": 0.8721822500228882,
+          "faithfulness_random": 0.49095738530158994,
+          "faithfulness_gain": 0.38122486472129824,
+          "deletion_start": 0.7469549179077148,
+          "deletion_end": 0.4010304808616638,
+          "concentration_gini": 0.561733603477478,
+          "rf": {
+            "roc_auc": 0.7748794153080654,
+            "accuracy": 0.7259528130671506,
+            "f1": 0.7844396859386152
+          },
+          "lr": {
+            "roc_auc": 0.7375334443749593,
+            "accuracy": 0.7019056261343013,
+            "f1": 0.7605685131195336
+          },
+          "redundancy": 0.1343602174097882,
+          "redundancy_const_cols": 0
+        }
+      }
+    },
+    "RFE": {
+      "ranking": [
+        "avg_score",
+        "num_submissions",
+        "studied_credits",
+        "num_of_prev_attempts",
+        "highest_education_Lower Than A Level",
+        "vle_page",
+        "vle_homepage",
+        "max_score",
+        "vle_quiz",
+        "vle_oucontent",
+        "vle_dataplus",
+        "min_score",
+        "vle_url",
+        "imd_band",
+        "vle_resource",
+        "age_band_35-55",
+        "vle_externalquiz",
+        "vle_ouelluminate",
+        "vle_questionnaire",
+        "vle_ouwiki",
+        "vle_forumng",
+        "disability_Y",
+        "region_North Region",
+        "region_East Midlands Region",
+        "vle_dualpane",
+        "region_North Western Region",
+        "vle_subpage",
+        "region_Wales",
+        "region_Scotland",
+        "gender_M",
+        "vle_oucollaborate",
+        "region_Ireland",
+        "region_West Midlands Region",
+        "vle_glossary",
+        "region_Yorkshire Region",
+        "highest_education_No Formal quals",
+        "region_South Region",
+        "region_London Region",
+        "region_South East Region",
+        "highest_education_HE Qualification",
+        "region_South West Region",
+        "vle_sharedsubpage",
+        "highest_education_Post Graduate Qualification",
+        "age_band_55=",
+        "vle_repeatactivity",
+        "no_submission",
+        "imd_missing"
+      ],
+      "info": {
+        "tied_steps_top": 0
+      },
+      "per_k": {
+        "5": {
+          "xgb": {
+            "roc_auc": 0.7255116089890143,
+            "accuracy": 0.6933983666061706,
+            "f1": 0.7632063074901445
+          },
+          "faithfulness": 0.812183678150177,
+          "faithfulness_random": 0.5439277768135071,
+          "faithfulness_gain": 0.2682559013366699,
+          "deletion_start": 0.7456868886947632,
+          "deletion_end": 0.4148029386997223,
+          "concentration_gini": 0.35818320512771606,
+          "rf": {
+            "roc_auc": 0.7211477942001617,
+            "accuracy": 0.6958938294010889,
+            "f1": 0.7647213690215007
+          },
+          "lr": {
+            "roc_auc": 0.6973710619543424,
+            "accuracy": 0.6671960072595281,
+            "f1": 0.7531965006729475
+          },
+          "redundancy": 0.18670485992142277,
+          "redundancy_const_cols": 0
+        },
+        "10": {
+          "xgb": {
+            "roc_auc": 0.7621053730148118,
+            "accuracy": 0.7150635208711433,
+            "f1": 0.7750716332378224
+          },
+          "faithfulness": 0.7575291991233826,
+          "faithfulness_random": 0.5189306378364563,
+          "faithfulness_gain": 0.23859856128692625,
+          "deletion_start": 0.7601941823959351,
+          "deletion_end": 0.3994377851486206,
+          "concentration_gini": 0.3054252564907074,
+          "rf": {
+            "roc_auc": 0.7683233003618155,
+            "accuracy": 0.7196007259528131,
+            "f1": 0.7794432548179872
+          },
+          "lr": {
+            "roc_auc": 0.7301174851390309,
+            "accuracy": 0.6822822141560798,
+            "f1": 0.7645229087852039
+          },
+          "redundancy": 0.20595275620918257,
+          "redundancy_const_cols": 0
+        },
+        "15": {
+          "xgb": {
+            "roc_auc": 0.7727841142717294,
+            "accuracy": 0.7222096188747731,
+            "f1": 0.7820592684880306
+          },
+          "faithfulness": 0.7813006043434143,
+          "faithfulness_random": 0.5396185368299484,
+          "faithfulness_gain": 0.24168206751346588,
+          "deletion_start": 0.7534455060958862,
+          "deletion_end": 0.4141370356082916,
+          "concentration_gini": 0.33200201392173767,
+          "rf": {
+            "roc_auc": 0.7719280888450847,
+            "accuracy": 0.7230036297640653,
+            "f1": 0.7823529411764706
+          },
+          "lr": {
+            "roc_auc": 0.7196765772163467,
+            "accuracy": 0.6721869328493648,
+            "f1": 0.7503455425017277
+          },
+          "redundancy": 0.1716111860410953,
+          "redundancy_const_cols": 0
+        },
+        "20": {
+          "xgb": {
+            "roc_auc": 0.771207142059468,
+            "accuracy": 0.7218693284936479,
+            "f1": 0.7818505338078292
+          },
+          "faithfulness": 0.8106148838996887,
+          "faithfulness_random": 0.5354610502719879,
+          "faithfulness_gain": 0.27515383362770085,
+          "deletion_start": 0.7516781091690063,
+          "deletion_end": 0.3926953673362732,
+          "concentration_gini": 0.4312984049320221,
+          "rf": {
+            "roc_auc": 0.7723745412113422,
+            "accuracy": 0.724478221415608,
+            "f1": 0.7836851010775671
+          },
+          "lr": {
+            "roc_auc": 0.7149531346400719,
+            "accuracy": 0.67252722323049,
+            "f1": 0.7499783493548108
+          },
+          "redundancy": 0.15813280577609917,
+          "redundancy_const_cols": 0
+        },
+        "25": {
+          "xgb": {
+            "roc_auc": 0.7710447858253406,
+            "accuracy": 0.7237976406533575,
+            "f1": 0.7825698723100277
+          },
+          "faithfulness": 0.8551258444786072,
+          "faithfulness_random": 0.5126192957162857,
+          "faithfulness_gain": 0.34250654876232145,
+          "deletion_start": 0.747282087802887,
+          "deletion_end": 0.404634952545166,
+          "concentration_gini": 0.49864423274993896,
+          "rf": {
+            "roc_auc": 0.7729370324586446,
+            "accuracy": 0.7248185117967332,
+            "f1": 0.783624687834463
+          },
+          "lr": {
+            "roc_auc": 0.7150956873416092,
+            "accuracy": 0.6719600725952813,
+            "f1": 0.7482152185269023
+          },
+          "redundancy": 0.12879165653094168,
+          "redundancy_const_cols": 0
+        },
+        "30": {
+          "xgb": {
+            "roc_auc": 0.7734988417661194,
+            "accuracy": 0.7242513611615246,
+            "f1": 0.7822269999104183
+          },
+          "faithfulness": 0.8808292746543884,
+          "faithfulness_random": 0.48930046856403353,
+          "faithfulness_gain": 0.3915288060903549,
+          "deletion_start": 0.7461937665939331,
+          "deletion_end": 0.40316006541252136,
+          "concentration_gini": 0.5454778075218201,
+          "rf": {
+            "roc_auc": 0.774075981080916,
+            "accuracy": 0.7251588021778584,
+            "f1": 0.7832155318958576
+          },
+          "lr": {
+            "roc_auc": 0.7268652322689779,
+            "accuracy": 0.6859119782214156,
+            "f1": 0.7568706646764422
+          },
+          "redundancy": 0.1155591230507226,
+          "redundancy_const_cols": 0
+        }
+      }
+    },
+    "LASSO": {
+      "ranking": [
+        "min_score",
+        "vle_homepage",
+        "avg_score",
+        "num_of_prev_attempts",
+        "highest_education_Lower Than A Level",
+        "studied_credits",
+        "max_score",
+        "imd_band",
+        "gender_M",
+        "vle_oucontent",
+        "vle_questionnaire",
+        "age_band_35-55",
+        "no_submission",
+        "imd_missing",
+        "num_submissions",
+        "vle_dualpane",
+        "vle_page",
+        "region_Wales",
+        "vle_resource",
+        "region_Scotland",
+        "vle_quiz",
+        "vle_ouelluminate",
+        "vle_forumng",
+        "highest_education_No Formal quals",
+        "vle_externalquiz",
+        "region_South Region",
+        "disability_Y",
+        "vle_dataplus",
+        "region_South East Region",
+        "vle_repeatactivity",
+        "region_North Western Region",
+        "region_South West Region",
+        "vle_url",
+        "vle_ouwiki",
+        "age_band_55=",
+        "vle_sharedsubpage",
+        "region_Ireland",
+        "highest_education_Post Graduate Qualification",
+        "vle_oucollaborate",
+        "region_North Region",
+        "region_London Region",
+        "region_East Midlands Region",
+        "highest_education_HE Qualification",
+        "vle_glossary",
+        "region_Yorkshire Region",
+        "region_West Midlands Region",
+        "vle_subpage"
+      ],
+      "info": {
+        "l1_min_c": 0.00038553099203458407,
+        "n_entered": 37,
+        "need": 30,
+        "n_never_enter": 10,
+        "max_tie_group": 2,
+        "convergence_warnings": 0
+      },
+      "per_k": {
+        "5": {
+          "xgb": {
+            "roc_auc": 0.7556285540317019,
+            "accuracy": 0.7021324863883848,
+            "f1": 0.763678905687545
+          },
+          "faithfulness": 1.0107501745224,
+          "faithfulness_random": 0.5858336478471756,
+          "faithfulness_gain": 0.4249165266752243,
+          "deletion_start": 0.7155383229255676,
+          "deletion_end": 0.5162902474403381,
+          "concentration_gini": 0.34552937746047974,
+          "rf": {
+            "roc_auc": 0.7377581026317258,
+            "accuracy": 0.6933983666061706,
+            "f1": 0.7551408642087145
+          },
+          "lr": {
+            "roc_auc": 0.7131093330121123,
+            "accuracy": 0.668557168784029,
+            "f1": 0.7468376364581528
+          },
+          "redundancy": 0.21210044155696495,
+          "redundancy_const_cols": 0
+        },
+        "10": {
+          "xgb": {
+            "roc_auc": 0.7625794575828789,
+            "accuracy": 0.712568058076225,
+            "f1": 0.7718350441202954
+          },
+          "faithfulness": 0.7991104125976562,
+          "faithfulness_random": 0.5549636393785476,
+          "faithfulness_gain": 0.2441467732191086,
+          "deletion_start": 0.7396098375320435,
+          "deletion_end": 0.4991915822029114,
+          "concentration_gini": 0.3213822841644287,
+          "rf": {
+            "roc_auc": 0.7590110028536181,
+            "accuracy": 0.7141560798548094,
+            "f1": 0.7738693467336684
+          },
+          "lr": {
+            "roc_auc": 0.7238094053468338,
+            "accuracy": 0.6779718693284936,
+            "f1": 0.7467665685487468
+          },
+          "redundancy": 0.18268181976192777,
+          "redundancy_const_cols": 0
+        },
+        "15": {
+          "xgb": {
+            "roc_auc": 0.7594391246773128,
+            "accuracy": 0.7107531760435571,
+            "f1": 0.7656680757213747
+          },
+          "faithfulness": 0.7698351144790649,
+          "faithfulness_random": 0.5312209010124207,
+          "faithfulness_gain": 0.23861421346664424,
+          "deletion_start": 0.7436824440956116,
+          "deletion_end": 0.467492014169693,
+          "concentration_gini": 0.4345492720603943,
+          "rf": {
+            "roc_auc": 0.760525263879344,
+            "accuracy": 0.7140426497277677,
+            "f1": 0.771171825360806
+          },
+          "lr": {
+            "roc_auc": 0.7335645000238133,
+            "accuracy": 0.6941923774954628,
+            "f1": 0.7475655430711611
+          },
+          "redundancy": 0.18108752561052838,
+          "redundancy_const_cols": 0
+        },
+        "20": {
+          "xgb": {
+            "roc_auc": 0.7666828804680049,
+            "accuracy": 0.7176724137931034,
+            "f1": 0.7753407347233505
+          },
+          "faithfulness": 0.8436023592948914,
+          "faithfulness_random": 0.5147248536348343,
+          "faithfulness_gain": 0.328877505660057,
+          "deletion_start": 0.7535375356674194,
+          "deletion_end": 0.4120655655860901,
+          "concentration_gini": 0.47538018226623535,
+          "rf": {
+            "roc_auc": 0.7663657784482246,
+            "accuracy": 0.7180127041742287,
+            "f1": 0.7770803443328551
+          },
+          "lr": {
+            "roc_auc": 0.7399675603951825,
+            "accuracy": 0.6998638838475499,
+            "f1": 0.7553171814314777
+          },
+          "redundancy": 0.14315379144659737,
+          "redundancy_const_cols": 0
+        },
+        "25": {
+          "xgb": {
+            "roc_auc": 0.768243595234779,
+            "accuracy": 0.7198275862068966,
+            "f1": 0.7781569965870307
+          },
+          "faithfulness": 0.871513307094574,
+          "faithfulness_random": 0.5022308260202408,
+          "faithfulness_gain": 0.36928248107433315,
+          "deletion_start": 0.7515153288841248,
+          "deletion_end": 0.40699124336242676,
+          "concentration_gini": 0.5026488900184631,
+          "rf": {
+            "roc_auc": 0.769256112213035,
+            "accuracy": 0.7232304900181489,
+            "f1": 0.7815968492660222
+          },
+          "lr": {
+            "roc_auc": 0.7391472140603117,
+            "accuracy": 0.6999773139745916,
+            "f1": 0.755883710198431
+          },
+          "redundancy": 0.1307319404563386,
+          "redundancy_const_cols": 0
+        },
+        "30": {
+          "xgb": {
+            "roc_auc": 0.7688611326649559,
+            "accuracy": 0.7194872958257713,
+            "f1": 0.777227276821908
+          },
+          "faithfulness": 0.8806804418563843,
+          "faithfulness_random": 0.4834728628396988,
+          "faithfulness_gain": 0.39720757901668546,
+          "deletion_start": 0.7502651810646057,
+          "deletion_end": 0.4097037613391876,
+          "concentration_gini": 0.570940375328064,
+          "rf": {
+            "roc_auc": 0.7690634505729739,
+            "accuracy": 0.7230036297640653,
+            "f1": 0.781025824964132
+          },
+          "lr": {
+            "roc_auc": 0.7396025043667335,
+            "accuracy": 0.6981624319419237,
+            "f1": 0.7543163142830763
+          },
+          "redundancy": 0.09662425445298263,
+          "redundancy_const_cols": 0
+        }
+      }
+    },
+    "ANOVA": {
+      "ranking": [
+        "min_score",
+        "avg_score",
+        "max_score",
+        "num_submissions",
+        "vle_homepage",
+        "vle_forumng",
+        "vle_oucontent",
+        "no_submission",
+        "vle_subpage",
+        "highest_education_Lower Than A Level",
+        "vle_questionnaire",
+        "vle_url",
+        "vle_quiz",
+        "vle_dualpane",
+        "num_of_prev_attempts",
+        "vle_resource",
+        "imd_band",
+        "vle_ouwiki",
+        "age_band_35-55",
+        "vle_oucollaborate",
+        "highest_education_HE Qualification",
+        "imd_missing",
+        "studied_credits",
+        "disability_Y",
+        "region_South Region",
+        "region_Wales",
+        "gender_M",
+        "region_North Western Region",
+        "highest_education_Post Graduate Qualification",
+        "highest_education_No Formal quals",
+        "vle_page",
+        "region_South East Region",
+        "vle_dataplus",
+        "vle_glossary",
+        "vle_ouelluminate",
+        "vle_externalquiz",
+        "age_band_55=",
+        "region_London Region",
+        "region_North Region",
+        "region_South West Region",
+        "region_Scotland",
+        "region_West Midlands Region",
+        "vle_repeatactivity",
+        "region_Yorkshire Region",
+        "region_Ireland",
+        "vle_sharedsubpage",
+        "region_East Midlands Region"
+      ],
+      "info": {
+        "n_nonzero": 47,
+        "max_tie_top": 1
+      },
+      "per_k": {
+        "5": {
+          "xgb": {
+            "roc_auc": 0.7234246003409808,
+            "accuracy": 0.6783121597096189,
+            "f1": 0.7323013026241268
+          },
+          "faithfulness": 0.6831703782081604,
+          "faithfulness_random": 0.5252665877342224,
+          "faithfulness_gain": 0.157903790473938,
+          "deletion_start": 0.7235687971115112,
+          "deletion_end": 0.4761385917663574,
+          "concentration_gini": 0.2763832211494446,
+          "rf": {
+            "roc_auc": 0.7203090082123559,
+            "accuracy": 0.6759301270417423,
+            "f1": 0.7303445021236432
+          },
+          "lr": {
+            "roc_auc": 0.7010211585197499,
+            "accuracy": 0.6611842105263158,
+            "f1": 0.7422110986450332
+          },
+          "redundancy": 0.6123151199442542,
+          "redundancy_const_cols": 0
+        },
+        "10": {
+          "xgb": {
+            "roc_auc": 0.7430598029041144,
+            "accuracy": 0.6928312159709619,
+            "f1": 0.7493520918178452
+          },
+          "faithfulness": 0.7471022605895996,
+          "faithfulness_random": 0.5695746064186096,
+          "faithfulness_gain": 0.17752765417099003,
+          "deletion_start": 0.7283720374107361,
+          "deletion_end": 0.4636692702770233,
+          "concentration_gini": 0.341770738363266,
+          "rf": {
+            "roc_auc": 0.741372738326104,
+            "accuracy": 0.691923774954628,
+            "f1": 0.7498618530116044
+          },
+          "lr": {
+            "roc_auc": 0.7240766166488353,
+            "accuracy": 0.6906760435571688,
+            "f1": 0.7434377646062659
+          },
+          "redundancy": 0.38169632867820413,
+          "redundancy_const_cols": 0
+        },
+        "15": {
+          "xgb": {
+            "roc_auc": 0.7615645947316165,
+            "accuracy": 0.7093920145190563,
+            "f1": 0.7614969279463787
+          },
+          "faithfulness": 0.787621021270752,
+          "faithfulness_random": 0.552033081650734,
+          "faithfulness_gain": 0.235587939620018,
+          "deletion_start": 0.7318578958511353,
+          "deletion_end": 0.46414610743522644,
+          "concentration_gini": 0.40796253085136414,
+          "rf": {
+            "roc_auc": 0.7627018248655228,
+            "accuracy": 0.7083711433756806,
+            "f1": 0.7623625103983732
+          },
+          "lr": {
+            "roc_auc": 0.7281877045376222,
+            "accuracy": 0.6941923774954628,
+            "f1": 0.744986757472569
+          },
+          "redundancy": 0.2742395852323277,
+          "redundancy_const_cols": 0
+        },
+        "20": {
+          "xgb": {
+            "roc_auc": 0.7607313733728028,
+            "accuracy": 0.710412885662432,
+            "f1": 0.76480884385076
+          },
+          "faithfulness": 0.8041412830352783,
+          "faithfulness_random": 0.5662076950073243,
+          "faithfulness_gain": 0.23793358802795406,
+          "deletion_start": 0.7330357432365417,
+          "deletion_end": 0.43551069498062134,
+          "concentration_gini": 0.43980661034584045,
+          "rf": {
+            "roc_auc": 0.7662859642108159,
+            "accuracy": 0.7178992740471869,
+            "f1": 0.7732287772408134
+          },
+          "lr": {
+            "roc_auc": 0.7303775224340473,
+            "accuracy": 0.6937386569872959,
+            "f1": 0.7503698224852071
+          },
+          "redundancy": 0.20786036065423075,
+          "redundancy_const_cols": 0
+        },
+        "25": {
+          "xgb": {
+            "roc_auc": 0.7655201730621439,
+            "accuracy": 0.7135889292196007,
+            "f1": 0.7683273694834388
+          },
+          "faithfulness": 0.8301934599876404,
+          "faithfulness_random": 0.5099344491958618,
+          "faithfulness_gain": 0.32025901079177854,
+          "deletion_start": 0.7380523681640625,
+          "deletion_end": 0.42791903018951416,
+          "concentration_gini": 0.5324196815490723,
+          "rf": {
+            "roc_auc": 0.7716201793741788,
+            "accuracy": 0.7231170598911071,
+            "f1": 0.7783931003177486
+          },
+          "lr": {
+            "roc_auc": 0.7341872474742721,
+            "accuracy": 0.6982758620689655,
+            "f1": 0.7542952152226122
+          },
+          "redundancy": 0.15182341985946474,
+          "redundancy_const_cols": 0
+        },
+        "30": {
+          "xgb": {
+            "roc_auc": 0.7666948826089686,
+            "accuracy": 0.7161978221415608,
+            "f1": 0.7710468521229868
+          },
+          "faithfulness": 0.8491780757904053,
+          "faithfulness_random": 0.5122350424528122,
+          "faithfulness_gain": 0.3369430333375931,
+          "deletion_start": 0.738066554069519,
+          "deletion_end": 0.42584720253944397,
+          "concentration_gini": 0.580627977848053,
+          "rf": {
+            "roc_auc": 0.7739569689422234,
+            "accuracy": 0.7215290381125227,
+            "f1": 0.7774453811984408
+          },
+          "lr": {
+            "roc_auc": 0.7371025947919546,
+            "accuracy": 0.6987295825771325,
+            "f1": 0.7550267478325032
+          },
+          "redundancy": 0.11745868622289218,
+          "redundancy_const_cols": 0
+        }
+      }
+    },
+    "SHAP": {
+      "ranking": [
+        "avg_score",
+        "num_submissions",
+        "vle_page",
+        "vle_homepage",
+        "min_score",
+        "highest_education_Lower Than A Level",
+        "vle_oucontent",
+        "max_score",
+        "vle_url",
+        "studied_credits",
+        "imd_band",
+        "vle_quiz",
+        "vle_resource",
+        "vle_forumng",
+        "vle_subpage",
+        "vle_externalquiz",
+        "vle_dualpane",
+        "vle_ouwiki",
+        "vle_ouelluminate",
+        "age_band_35-55",
+        "num_of_prev_attempts",
+        "vle_questionnaire",
+        "vle_oucollaborate",
+        "region_Scotland",
+        "gender_M",
+        "region_Wales",
+        "vle_glossary",
+        "region_North Western Region",
+        "region_London Region",
+        "region_South East Region",
+        "disability_Y",
+        "region_West Midlands Region",
+        "region_South West Region",
+        "region_South Region",
+        "region_East Midlands Region",
+        "highest_education_HE Qualification",
+        "region_Yorkshire Region",
+        "highest_education_No Formal quals",
+        "region_North Region",
+        "region_Ireland",
+        "vle_dataplus",
+        "age_band_55=",
+        "vle_sharedsubpage",
+        "highest_education_Post Graduate Qualification",
+        "imd_missing",
+        "no_submission",
+        "vle_repeatactivity"
+      ],
+      "info": {
+        "n_nonzero": 44,
+        "max_tie_top": 1
+      },
+      "per_k": {
+        "5": {
+          "xgb": {
+            "roc_auc": 0.733266001322527,
+            "accuracy": 0.6907894736842105,
+            "f1": 0.7546796256299496
+          },
+          "faithfulness": 0.6385103464126587,
+          "faithfulness_random": 0.5581456989049911,
+          "faithfulness_gain": 0.08036464750766759,
+          "deletion_start": 0.7334801554679871,
+          "deletion_end": 0.40361320972442627,
+          "concentration_gini": 0.2084241807460785,
+          "rf": {
+            "roc_auc": 0.7229089174434371,
+            "accuracy": 0.6837568058076225,
+            "f1": 0.7443609022556391
+          },
+          "lr": {
+            "roc_auc": 0.7065321324863967,
+            "accuracy": 0.6541515426497277,
+            "f1": 0.7431123093773696
+          },
+          "redundancy": 0.38852020411009935,
+          "redundancy_const_cols": 0
+        },
+        "10": {
+          "xgb": {
+            "roc_auc": 0.7638829719243191,
+            "accuracy": 0.7171052631578947,
+            "f1": 0.7790182527024633
+          },
+          "faithfulness": 0.6968460083007812,
+          "faithfulness_random": 0.5133919954299927,
+          "faithfulness_gain": 0.18345401287078855,
+          "deletion_start": 0.7500259280204773,
+          "deletion_end": 0.3926143944263458,
+          "concentration_gini": 0.18958482146263123,
+          "rf": {
+            "roc_auc": 0.7599712559634957,
+            "accuracy": 0.7113203266787659,
+            "f1": 0.7728692547969657
+          },
+          "lr": {
+            "roc_auc": 0.710777808019536,
+            "accuracy": 0.6652676950998185,
+            "f1": 0.7458882287092052
+          },
+          "redundancy": 0.28328031929091424,
+          "redundancy_const_cols": 0
+        },
+        "15": {
+          "xgb": {
+            "roc_auc": 0.7679465422459268,
+            "accuracy": 0.71744555353902,
+            "f1": 0.7766520218775217
+          },
+          "faithfulness": 0.7880126237869263,
+          "faithfulness_random": 0.528358456492424,
+          "faithfulness_gain": 0.2596541672945023,
+          "deletion_start": 0.7505748867988586,
+          "deletion_end": 0.4097622036933899,
+          "concentration_gini": 0.317482054233551,
+          "rf": {
+            "roc_auc": 0.7701554544575215,
+            "accuracy": 0.72005444646098,
+            "f1": 0.7788926715642358
+          },
+          "lr": {
+            "roc_auc": 0.7131705439310274,
+            "accuracy": 0.6674228675136116,
+            "f1": 0.7478066402890075
+          },
+          "redundancy": 0.23286390877215274,
+          "redundancy_const_cols": 0
+        },
+        "20": {
+          "xgb": {
+            "roc_auc": 0.7680369947446443,
+            "accuracy": 0.7198275862068966,
+            "f1": 0.7784753363228699
+          },
+          "faithfulness": 0.8209439516067505,
+          "faithfulness_random": 0.5524353206157684,
+          "faithfulness_gain": 0.2685086309909821,
+          "deletion_start": 0.7448270320892334,
+          "deletion_end": 0.40090134739875793,
+          "concentration_gini": 0.4088113307952881,
+          "rf": {
+            "roc_auc": 0.7711378296954026,
+            "accuracy": 0.7217558983666061,
+            "f1": 0.7797431983478496
+          },
+          "lr": {
+            "roc_auc": 0.7095570811731526,
+            "accuracy": 0.6682168784029038,
+            "f1": 0.7471254430708049
+          },
+          "redundancy": 0.1974951638940262,
+          "redundancy_const_cols": 0
+        },
+        "25": {
+          "xgb": {
+            "roc_auc": 0.7727344963298817,
+            "accuracy": 0.7261796733212341,
+            "f1": 0.7843487582633554
+          },
+          "faithfulness": 0.85935378074646,
+          "faithfulness_random": 0.511722257733345,
+          "faithfulness_gain": 0.34763152301311495,
+          "deletion_start": 0.7441049814224243,
+          "deletion_end": 0.4070430099964142,
+          "concentration_gini": 0.47271618247032166,
+          "rf": {
+            "roc_auc": 0.7727098373857199,
+            "accuracy": 0.7250453720508166,
+            "f1": 0.783687310369445
+          },
+          "lr": {
+            "roc_auc": 0.724529697470216,
+            "accuracy": 0.6808076225045372,
+            "f1": 0.7532877432930036
+          },
+          "redundancy": 0.16358221601395698,
+          "redundancy_const_cols": 0
+        },
+        "30": {
+          "xgb": {
+            "roc_auc": 0.7726818232976067,
+            "accuracy": 0.7245916515426497,
+            "f1": 0.783252990537404
+          },
+          "faithfulness": 0.8753907084465027,
+          "faithfulness_random": 0.48865472078323363,
+          "faithfulness_gain": 0.38673598766326905,
+          "deletion_start": 0.7454931735992432,
+          "deletion_end": 0.39639341831207275,
+          "concentration_gini": 0.5467216372489929,
+          "rf": {
+            "roc_auc": 0.7753940889346643,
+            "accuracy": 0.7278811252268602,
+            "f1": 0.7860519040399536
+          },
+          "lr": {
+            "roc_auc": 0.7262898387201397,
+            "accuracy": 0.6869328493647913,
+            "f1": 0.7583610576081247
+          },
+          "redundancy": 0.12178513313393521,
+          "redundancy_const_cols": 0
+        }
+      }
+    }
+  },
+  "provenance": {
+    "git_sha": "1ff532fc47465f9890e50cc002b72659c1a826f0",
+    "code_sha": "f9c197105763537e3440e35c28bd0973a645d82d",
+    "git_dirty": false,
+    "versions": {
+      "numpy": "2.2.6",
+      "pandas": "2.3.0",
+      "sklearn": "1.7.0",
+      "xgboost": "3.0.2",
+      "shap": "0.48.0"
+    },
+    "FS_N_JOBS": 3,
+    "data_sha256": {
+      "assessments.csv": "9ce92381e4a0ac457f8e251b2eb2c179ed51e023ab30d1d671a0268bd62316ba",
+      "courses.csv": "4f16eee7454b15e109b0a21a0e43be820e6846ed6f9301bb7feb5ab5ad737a75",
+      "studentAssessment.csv": "b1839e17618a5de36b6d189a242d3123f7939a56c8c9ccef0c17b9199c614a6b",
+      "studentInfo.csv": "815fbc3e2de29f79900bc63f0345a35db62c9146afaa1d86e7107b8b3beffc60",
+      "studentRegistration.csv": "bbc87a0de1fe2a9ec6decce1ca6c1a02cf17b54ad3bdcc673fc6413b41c61d47",
+      "studentVle.csv": "52668253d876c5becbcb72185977152700cecab2942aca807fecc3dd54b937f0",
+      "vle.csv": "d1b28303dea802ad87b4484e1196e878e06824850b9a4fe8aa34693439fe87e9",
+      "xapi_edu_data.csv": "7ec40f0d14e616233d8ceff1ccbaa6d31947d537a1c5befb29e9fb00b453cee3"
+    }
+  },
+  "n_dev": 16338,
+  "n_holdout": 8816,
+  "n_dev_dropped_overlap": 1199,
+  "n_boot": 1000,
+  "bootstrap": {
+    "xgb_k5": {
+      "auc_ci": {
+        "MI": [
+          0.7267103189101821,
+          0.746276190631749
+        ],
+        "RFE": [
+          0.7146269849713746,
+          0.735415101057613
+        ],
+        "LASSO": [
+          0.7455700813564725,
+          0.7652418139254762
+        ],
+        "ANOVA": [
+          0.713306811625927,
+          0.7330334793981191
+        ],
+        "SHAP": [
+          0.7222890155523408,
+          0.7432585725731842
+        ]
+      },
+      "diff_vs_all_ci": {
+        "MI": [
+          -0.04269511713067174,
+          -0.02976102112443749
+        ],
+        "RFE": [
+          -0.05526159583505293,
+          -0.03993470438903558
+        ],
+        "LASSO": [
+          -0.023768656405668644,
+          -0.011385722983817037
+        ],
+        "ANOVA": [
+          -0.055609132672489306,
+          -0.04370093327279585
+        ],
+        "SHAP": [
+          -0.04543400205320973,
+          -0.034430747203465346
+        ]
+      },
+      "pairwise_diff_ci": {
+        "MI_vs_RFE": [
+          0.003671217951598288,
+          0.01927365269863109
+        ],
+        "MI_vs_LASSO": [
+          -0.02318436440168808,
+          -0.01478339427331751
+        ],
+        "MI_vs_ANOVA": [
+          0.008938665619207772,
+          0.01773125398677626
+        ],
+        "MI_vs_SHAP": [
+          -0.0005828232643868364,
+          0.007774849814349749
+        ],
+        "RFE_vs_LASSO": [
+          -0.03720395789174548,
+          -0.023408800239066687
+        ],
+        "RFE_vs_ANOVA": [
+          -0.006076947378045053,
+          0.009955886178255649
+        ],
+        "RFE_vs_SHAP": [
+          -0.015894105825789945,
+          -0.00023614615433340037
+        ],
+        "LASSO_vs_ANOVA": [
+          0.026555383350389615,
+          0.037869499946785755
+        ],
+        "LASSO_vs_SHAP": [
+          0.01654318084692471,
+          0.028090213110876474
+        ],
+        "ANOVA_vs_SHAP": [
+          -0.01269948374561044,
+          -0.007075004810050825
+        ]
+      }
+    },
+    "xgb_k10": {
+      "auc_ci": {
+        "MI": [
+          0.7431800459382728,
+          0.7631856702905216
+        ],
+        "RFE": [
+          0.7512641530495052,
+          0.7717851506892661
+        ],
+        "LASSO": [
+          0.7515071958095189,
+          0.7719977510641818
+        ],
+        "ANOVA": [
+          0.7323562295154128,
+          0.752742443561912
+        ],
+        "SHAP": [
+          0.7532618145602821,
+          0.7740972029458139
+        ]
+      },
+      "diff_vs_all_ci": {
+        "MI": [
+          -0.023608561541083012,
+          -0.014814539958587678
+        ],
+        "RFE": [
+          -0.014638405034772614,
+          -0.0076826039236744335
+        ],
+        "LASSO": [
+          -0.015287162283921841,
+          -0.005964090716844268
+        ],
+        "ANOVA": [
+          -0.0353423648873293,
+          -0.025359924898380917
+        ],
+        "SHAP": [
+          -0.013025145682235686,
+          -0.005740170323342485
+        ]
+      },
+      "pairwise_diff_ci": {
+        "MI_vs_RFE": [
+          -0.012929189068148167,
+          -0.0035560321901557095
+        ],
+        "MI_vs_LASSO": [
+          -0.01559413642688282,
+          -0.0020722081616985064
+        ],
+        "MI_vs_ANOVA": [
+          0.005362343965084751,
+          0.016030171458577994
+        ],
+        "MI_vs_SHAP": [
+          -0.014800007422849629,
+          -0.005289325545161085
+        ],
+        "RFE_vs_LASSO": [
+          -0.00537954763640347,
+          0.0044516840589067155
+        ],
+        "RFE_vs_ANOVA": [
+          0.01506940207823155,
+          0.023362501875117854
+        ],
+        "RFE_vs_SHAP": [
+          -0.005002687171988577,
+          0.0015314428179437841
+        ],
+        "LASSO_vs_ANOVA": [
+          0.014279615856528158,
+          0.024813882422240804
+        ],
+        "LASSO_vs_SHAP": [
+          -0.0062896297044366745,
+          0.0033455534625004913
+        ],
+        "ANOVA_vs_SHAP": [
+          -0.024883548275273885,
+          -0.016612098443287156
+        ]
+      }
+    },
+    "xgb_k15": {
+      "auc_ci": {
+        "MI": [
+          0.7499826553447907,
+          0.7695812750800363
+        ],
+        "RFE": [
+          0.7621908344614245,
+          0.7823153040197695
+        ],
+        "LASSO": [
+          0.7484376207084852,
+          0.7690054633325598
+        ],
+        "ANOVA": [
+          0.751420524132474,
+          0.7709876360011968
+        ],
+        "SHAP": [
+          0.7576316467586357,
+          0.7774311966787326
+        ]
+      },
+      "diff_vs_all_ci": {
+        "MI": [
+          -0.016662533038733742,
+          -0.009042254970938626
+        ],
+        "RFE": [
+          -0.0020611667592139475,
+          0.0015293125377970063
+        ],
+        "LASSO": [
+          -0.01761109999382815,
+          -0.009782376618680906
+        ],
+        "ANOVA": [
+          -0.015125389082261223,
+          -0.007773287134625867
+        ],
+        "SHAP": [
+          -0.007224186571828589,
+          -0.003042524221815707
+        ]
+      },
+      "pairwise_diff_ci": {
+        "MI_vs_RFE": [
+          -0.01623272122410643,
+          -0.008777631921634908
+        ],
+        "MI_vs_LASSO": [
+          -0.004544646989032089,
+          0.006272898916279827
+        ],
+        "MI_vs_ANOVA": [
+          -0.005173790906877557,
+          0.002421050396989099
+        ],
+        "MI_vs_SHAP": [
+          -0.01120699328872205,
+          -0.004076634126057357
+        ],
+        "RFE_vs_LASSO": [
+          0.009812499885309845,
+          0.017000930346277816
+        ],
+        "RFE_vs_ANOVA": [
+          0.0073223331941358934,
+          0.014885447233892743
+        ],
+        "RFE_vs_SHAP": [
+          0.0031045622959198493,
+          0.006532460759353725
+        ],
+        "LASSO_vs_ANOVA": [
+          -0.007530915274695021,
+          0.0029601092489197228
+        ],
+        "LASSO_vs_SHAP": [
+          -0.01264187839722113,
+          -0.004461469977031654
+        ],
+        "ANOVA_vs_SHAP": [
+          -0.010048190951526467,
+          -0.0024028058041617928
+        ]
+      }
+    },
+    "xgb_k20": {
+      "auc_ci": {
+        "MI": [
+          0.7552491549995374,
+          0.7746549946940887
+        ],
+        "RFE": [
+          0.7609516471821657,
+          0.7803318067841124
+        ],
+        "LASSO": [
+          0.7561607446106968,
+          0.7761833820331648
+        ],
+        "ANOVA": [
+          0.7504975341797248,
+          0.770047451157158
+        ],
+        "SHAP": [
+          0.7577216310663761,
+          0.7773307453090498
+        ]
+      },
+      "diff_vs_all_ci": {
+        "MI": [
+          -0.010133772205698244,
+          -0.00501371774263765
+        ],
+        "RFE": [
+          -0.003594568416158178,
+          -0.0003473035738909565
+        ],
+        "LASSO": [
+          -0.009558374111797266,
+          -0.003452033453867326
+        ],
+        "ANOVA": [
+          -0.015600382137281052,
+          -0.009161501058908382
+        ],
+        "SHAP": [
+          -0.006863094805686284,
+          -0.0032408106519763846
+        ]
+      },
+      "pairwise_diff_ci": {
+        "MI_vs_RFE": [
+          -0.008406600228413566,
+          -0.003008077888347546
+        ],
+        "MI_vs_LASSO": [
+          -0.005218029033488447,
+          0.0027095338588011605
+        ],
+        "MI_vs_ANOVA": [
+          0.0020822949875082567,
+          0.007402201412386796
+        ],
+        "MI_vs_SHAP": [
+          -0.005150561733410622,
+          0.00016994227360919118
+        ],
+        "RFE_vs_LASSO": [
+          0.0015940520827032567,
+          0.007497100598514105
+        ],
+        "RFE_vs_ANOVA": [
+          0.007183525461139997,
+          0.013827452007757436
+        ],
+        "RFE_vs_SHAP": [
+          0.0014143316670713474,
+          0.004801245552249062
+        ],
+        "LASSO_vs_ANOVA": [
+          0.0010563866345783268,
+          0.010657449743524259
+        ],
+        "LASSO_vs_SHAP": [
+          -0.00483115159402194,
+          0.001994169739811174
+        ],
+        "ANOVA_vs_SHAP": [
+          -0.010707618475490361,
+          -0.0037614182114562218
+        ]
+      }
+    },
+    "xgb_k25": {
+      "auc_ci": {
+        "MI": [
+          0.7595649794347352,
+          0.7788272615476599
+        ],
+        "RFE": [
+          0.7609883111598849,
+          0.7801917272335939
+        ],
+        "LASSO": [
+          0.7575357529562456,
+          0.7775515367197953
+        ],
+        "ANOVA": [
+          0.7553026351214144,
+          0.7749510380981074
+        ],
+        "SHAP": [
+          0.7622352306945922,
+          0.781889168995368
+        ]
+      },
+      "diff_vs_all_ci": {
+        "MI": [
+          -0.004881512108931302,
+          -0.0020633576497818837
+        ],
+        "RFE": [
+          -0.003512308733716399,
+          -0.0006987218742399271
+        ],
+        "LASSO": [
+          -0.007083189593043726,
+          -0.0026376079763596578
+        ],
+        "ANOVA": [
+          -0.010123760878818455,
+          -0.005099817955231706
+        ],
+        "SHAP": [
+          -0.0016806767839905256,
+          0.0008659511716969658
+        ]
+      },
+      "pairwise_diff_ci": {
+        "MI_vs_RFE": [
+          -0.002622914093922182,
+          -0.0003404546273471311
+        ],
+        "MI_vs_LASSO": [
+          -0.0008781342274538917,
+          0.003545916959756065
+        ],
+        "MI_vs_ANOVA": [
+          0.001749046432729759,
+          0.006515962300215286
+        ],
+        "MI_vs_SHAP": [
+          -0.004154597342088886,
+          -0.002159765431743113
+        ],
+        "RFE_vs_LASSO": [
+          0.0006536396261522276,
+          0.00494975660514142
+        ],
+        "RFE_vs_ANOVA": [
+          0.0031389284558703714,
+          0.00781311316241846
+        ],
+        "RFE_vs_SHAP": [
+          -0.0030281712536087634,
+          -0.00046698123141035447
+        ],
+        "LASSO_vs_ANOVA": [
+          -0.0006565586716119731,
+          0.006270906258321654
+        ],
+        "LASSO_vs_SHAP": [
+          -0.006712443070568128,
+          -0.002243997438276877
+        ],
+        "ANOVA_vs_SHAP": [
+          -0.00957958073163064,
+          -0.004914179561008461
+        ]
+      }
+    },
+    "xgb_k30": {
+      "auc_ci": {
+        "MI": [
+          0.7604911204985974,
+          0.7800447409605521
+        ],
+        "RFE": [
+          0.7632208431221206,
+          0.7827642624807222
+        ],
+        "LASSO": [
+          0.7583521450997576,
+          0.7780036797006252
+        ],
+        "ANOVA": [
+          0.7562095305128632,
+          0.77590391171366
+        ],
+        "SHAP": [
+          0.7621054030495731,
+          0.7820161513882994
+        ]
+      },
+      "diff_vs_all_ci": {
+        "MI": [
+          -0.0035868236739679538,
+          -0.0010351233872535007
+        ],
+        "RFE": [
+          -0.0007272941680921157,
+          0.0015641221531492832
+        ],
+        "LASSO": [
+          -0.006533603185477082,
+          -0.0019038595596535092
+        ],
+        "ANOVA": [
+          -0.008782758332439036,
+          -0.003982162736131793
+        ],
+        "SHAP": [
+          -0.0015375489334323172,
+          0.0007057031861727568
+        ]
+      },
+      "pairwise_diff_ci": {
+        "MI_vs_RFE": [
+          -0.003981707325606404,
+          -0.001424364500113376
+        ],
+        "MI_vs_LASSO": [
+          -0.0004886786155582856,
+          0.004238933172130787
+        ],
+        "MI_vs_ANOVA": [
+          0.0015261553613480862,
+          0.006513918244361146
+        ],
+        "MI_vs_SHAP": [
+          -0.003168945528417086,
+          -0.0005784324654828838
+        ],
+        "RFE_vs_LASSO": [
+          0.002454095760773678,
+          0.006808992693590999
+        ],
+        "RFE_vs_ANOVA": [
+          0.004139847504426725,
+          0.009308252588348869
+        ],
+        "RFE_vs_SHAP": [
+          -0.00027819852290768277,
+          0.0018471919352797265
+        ],
+        "LASSO_vs_ANOVA": [
+          -0.0011985506503417094,
+          0.005573550041471048
+        ],
+        "LASSO_vs_SHAP": [
+          -0.005809877467669533,
+          -0.0016609893030661489
+        ],
+        "ANOVA_vs_SHAP": [
+          -0.008416009142326274,
+          -0.0034639125735892694
+        ]
+      }
+    },
+    "rf_k5": {
+      "auc_ci": {
+        "MI": [
+          0.7165171333415616,
+          0.736812878261415
+        ],
+        "RFE": [
+          0.7102922656045774,
+          0.7309516221187663
+        ],
+        "LASSO": [
+          0.7269767411723608,
+          0.7474357169855205
+        ],
+        "ANOVA": [
+          0.7095585276210898,
+          0.7304592891004448
+        ],
+        "SHAP": [
+          0.7121398838769204,
+          0.7335169164746136
+        ]
+      },
+      "diff_vs_all_ci": {
+        "MI": [
+          -0.055754489677121266,
+          -0.04449470317350458
+        ],
+        "RFE": [
+          -0.06261550678457001,
+          -0.048814536285322715
+        ],
+        "LASSO": [
+          -0.04495751447147237,
+          -0.03395908521152429
+        ],
+        "ANOVA": [
+          -0.062243026548826054,
+          -0.05059916984754434
+        ],
+        "SHAP": [
+          -0.05967472466731409,
+          -0.048274928198788945
+        ]
+      },
+      "pairwise_diff_ci": {
+        "MI_vs_RFE": [
+          -0.002299871935167774,
+          0.013897522314896396
+        ],
+        "MI_vs_LASSO": [
+          -0.015370617532343533,
+          -0.006442351385852317
+        ],
+        "MI_vs_ANOVA": [
+          0.0022035141727340004,
+          0.010778890279321916
+        ],
+        "MI_vs_SHAP": [
+          -0.0007809366821953878,
+          0.008833548094112235
+        ],
+        "RFE_vs_LASSO": [
+          -0.023607503923710957,
+          -0.009515043665546449
+        ],
+        "RFE_vs_ANOVA": [
+          -0.007791162284786257,
+          0.008777055460326718
+        ],
+        "RFE_vs_SHAP": [
+          -0.009875140802213458,
+          0.006239426885276732
+        ],
+        "LASSO_vs_ANOVA": [
+          0.011778729251496669,
+          0.022873747397927042
+        ],
+        "LASSO_vs_SHAP": [
+          0.009294130907269988,
+          0.020326243322948294
+        ],
+        "ANOVA_vs_SHAP": [
+          -0.005458809946806106,
+          6.659015566563461e-05
+        ]
+      }
+    },
+    "rf_k10": {
+      "auc_ci": {
+        "MI": [
+          0.7454655785818182,
+          0.7653471040148152
+        ],
+        "RFE": [
+          0.7577114514702982,
+          0.7780187068580644
+        ],
+        "LASSO": [
+          0.748085907765795,
+          0.7685187752045141
+        ],
+        "ANOVA": [
+          0.7304818224654139,
+          0.7509896593834339
+        ],
+        "SHAP": [
+          0.74915334774934,
+          0.7696750470520773
+        ]
+      },
+      "diff_vs_all_ci": {
+        "MI": [
+          -0.024805456365345743,
+          -0.01775508380820652
+        ],
+        "RFE": [
+          -0.011729154359424208,
+          -0.005907750756648458
+        ],
+        "LASSO": [
+          -0.022186717287103964,
+          -0.014246459621940188
+        ],
+        "ANOVA": [
+          -0.03997094349470468,
+          -0.03157105893824968
+        ],
+        "SHAP": [
+          -0.020480368013191426,
+          -0.013785050808915213
+        ]
+      },
+      "pairwise_diff_ci": {
+        "MI_vs_RFE": [
+          -0.016577213062316038,
+          -0.008097480893801554
+        ],
+        "MI_vs_LASSO": [
+          -0.00874068015369935,
+          0.0025455851730205002
+        ],
+        "MI_vs_ANOVA": [
+          0.00947141533488457,
+          0.019221608979338212
+        ],
+        "MI_vs_SHAP": [
+          -0.008160254397146429,
+          -8.002173939036519e-05
+        ],
+        "RFE_vs_LASSO": [
+          0.0052497566062812365,
+          0.013481606607263146
+        ],
+        "RFE_vs_ANOVA": [
+          0.02282361606034248,
+          0.0314283427573653
+        ],
+        "RFE_vs_SHAP": [
+          0.0051717618440354106,
+          0.011622465133245689
+        ],
+        "LASSO_vs_ANOVA": [
+          0.013030936639444888,
+          0.022306047621334896
+        ],
+        "LASSO_vs_SHAP": [
+          -0.005200601121745749,
+          0.003231015855519184
+        ],
+        "ANOVA_vs_SHAP": [
+          -0.022243819355356055,
+          -0.014912965071607618
+        ]
+      }
+    },
+    "rf_k15": {
+      "auc_ci": {
+        "MI": [
+          0.7496795901510305,
+          0.7693889154842493
+        ],
+        "RFE": [
+          0.7620264359175362,
+          0.78169602704602
+        ],
+        "LASSO": [
+          0.7496623632301186,
+          0.7699554022719272
+        ],
+        "ANOVA": [
+          0.7524716273980959,
+          0.771812818415323
+        ],
+        "SHAP": [
+          0.7600430014750444,
+          0.7799545002207261
+        ]
+      },
+      "diff_vs_all_ci": {
+        "MI": [
+          -0.01989760975207059,
+          -0.0140574023218558
+        ],
+        "RFE": [
+          -0.007114268265529924,
+          -0.0031872681705892086
+        ],
+        "LASSO": [
+          -0.01986471738975803,
+          -0.013218011579472892
+        ],
+        "ANOVA": [
+          -0.017189515846450995,
+          -0.011463817081750477
+        ],
+        "SHAP": [
+          -0.008762012368183598,
+          -0.005048876386985397
+        ]
+      },
+      "pairwise_diff_ci": {
+        "MI_vs_RFE": [
+          -0.014611156512709458,
+          -0.009008819895531357
+        ],
+        "MI_vs_LASSO": [
+          -0.00453480511064287,
+          0.004109156101291505
+        ],
+        "MI_vs_ANOVA": [
+          -0.0054272223240459634,
+          0.0004014385394837866
+        ],
+        "MI_vs_SHAP": [
+          -0.012724121118256373,
+          -0.007215554865481004
+        ],
+        "RFE_vs_LASSO": [
+          0.008529387065338286,
+          0.014569979366536577
+        ],
+        "RFE_vs_ANOVA": [
+          0.006555309794012703,
+          0.012001337934282857
+        ],
+        "RFE_vs_SHAP": [
+          -0.00011820346418470739,
+          0.003606725751835396
+        ],
+        "LASSO_vs_ANOVA": [
+          -0.006343005109090369,
+          0.0017731227635409364
+        ],
+        "LASSO_vs_SHAP": [
+          -0.013129010640866865,
+          -0.006421416784365353
+        ],
+        "ANOVA_vs_SHAP": [
+          -0.01014021110533026,
+          -0.00474412609878741
+        ]
+      }
+    },
+    "rf_k20": {
+      "auc_ci": {
+        "MI": [
+          0.7612920059219411,
+          0.7809188634003279
+        ],
+        "RFE": [
+          0.7620820922740554,
+          0.7816492040432393
+        ],
+        "LASSO": [
+          0.7557180043975404,
+          0.7759565696748036
+        ],
+        "ANOVA": [
+          0.7559676840938152,
+          0.7755323938526968
+        ],
+        "SHAP": [
+          0.7609127888578348,
+          0.7807380107263617
+        ]
+      },
+      "diff_vs_all_ci": {
+        "MI": [
+          -0.007179604119396216,
+          -0.0035294149594646217
+        ],
+        "RFE": [
+          -0.006410170326579154,
+          -0.0027848288126966687
+        ],
+        "LASSO": [
+          -0.013332837955897788,
+          -0.007847760412073938
+        ],
+        "ANOVA": [
+          -0.012779687756878757,
+          -0.008527867530498093
+        ],
+        "SHAP": [
+          -0.007682689971498724,
+          -0.004082294840985516
+        ]
+      },
+      "pairwise_diff_ci": {
+        "MI_vs_RFE": [
+          -0.002585711224348941,
+          0.0011232620724345136
+        ],
+        "MI_vs_LASSO": [
+          0.002124861844975934,
+          0.008226158056445495
+        ],
+        "MI_vs_ANOVA": [
+          0.00323521399465066,
+          0.007516134174838626
+        ],
+        "MI_vs_SHAP": [
+          -0.0012103038291756824,
+          0.0022527959484960605
+        ],
+        "RFE_vs_LASSO": [
+          0.0032019751769513634,
+          0.008791432678572093
+        ],
+        "RFE_vs_ANOVA": [
+          0.003920235030480601,
+          0.00842182746738816
+        ],
+        "RFE_vs_SHAP": [
+          -0.0005708791618035169,
+          0.0030663744489764413
+        ],
+        "LASSO_vs_ANOVA": [
+          -0.0033849201673113146,
+          0.003668084943767925
+        ],
+        "LASSO_vs_SHAP": [
+          -0.007879249598522629,
+          -0.0017073934060557658
+        ],
+        "ANOVA_vs_SHAP": [
+          -0.007163294708271653,
+          -0.0026023459161077125
+        ]
+      }
+    },
+    "rf_k25": {
+      "auc_ci": {
+        "MI": [
+          0.7629712658364937,
+          0.782377136310926
+        ],
+        "RFE": [
+          0.7626096206948939,
+          0.7824387336302081
+        ],
+        "LASSO": [
+          0.7585631341482562,
+          0.7788082326341372
+        ],
+        "ANOVA": [
+          0.7614350641285887,
+          0.7808654791209558
+        ],
+        "SHAP": [
+          0.7628087117859179,
+          0.7820901752645756
+        ]
+      },
+      "diff_vs_all_ci": {
+        "MI": [
+          -0.00535114464213311,
+          -0.002537835299087654
+        ],
+        "RFE": [
+          -0.005576527723030194,
+          -0.0024912246634341494
+        ],
+        "LASSO": [
+          -0.009687877686043839,
+          -0.005898483282706371
+        ],
+        "ANOVA": [
+          -0.007002167701474446,
+          -0.0037952436812772527
+        ],
+        "SHAP": [
+          -0.005781673074358432,
+          -0.002832620337538358
+        ]
+      },
+      "pairwise_diff_ci": {
+        "MI_vs_RFE": [
+          -0.0012852530605893808,
+          0.0014371841401772075
+        ],
+        "MI_vs_LASSO": [
+          0.0017681126088459342,
+          0.0056822800203081975
+        ],
+        "MI_vs_ANOVA": [
+          -9.37553525095336e-05,
+          0.0028734308680353703
+        ],
+        "MI_vs_SHAP": [
+          -0.0009805651575707426,
+          0.0015316478092205431
+        ],
+        "RFE_vs_LASSO": [
+          0.0017838066375857609,
+          0.005507830822934226
+        ],
+        "RFE_vs_ANOVA": [
+          -0.00026078155920046254,
+          0.002848548370499914
+        ],
+        "RFE_vs_SHAP": [
+          -0.001157208472388227,
+          0.0016482247815292027
+        ],
+        "LASSO_vs_ANOVA": [
+          -0.004558432460246356,
+          -0.00017295054161063742
+        ],
+        "LASSO_vs_SHAP": [
+          -0.005384002877087718,
+          -0.0014423199968053163
+        ],
+        "ANOVA_vs_SHAP": [
+          -0.0026159591056595377,
+          0.00032357578740891394
+        ]
+      }
+    },
+    "rf_k30": {
+      "auc_ci": {
+        "MI": [
+          0.7646469765443756,
+          0.7845493351269716
+        ],
+        "RFE": [
+          0.7637549461948648,
+          0.7837083599428372
+        ],
+        "LASSO": [
+          0.7589036886683765,
+          0.778461917090249
+        ],
+        "ANOVA": [
+          0.7636476224604427,
+          0.7834028224080448
+        ],
+        "SHAP": [
+          0.765118181788381,
+          0.7852683134223312
+        ]
+      },
+      "diff_vs_all_ci": {
+        "MI": [
+          -0.003374326150015583,
+          -0.0008216416125991972
+        ],
+        "RFE": [
+          -0.004281843724790865,
+          -0.0015524340894678028
+        ],
+        "LASSO": [
+          -0.009794300081761473,
+          -0.0059637861711201836
+        ],
+        "ANOVA": [
+          -0.004619779525419807,
+          -0.0015430600203524716
+        ],
+        "SHAP": [
+          -0.0028125658456787245,
+          -0.00023679469014818743
+        ]
+      },
+      "pairwise_diff_ci": {
+        "MI_vs_RFE": [
+          -0.0005598509922065259,
+          0.0021623859174199427
+        ],
+        "MI_vs_LASSO": [
+          0.003865980631955221,
+          0.007700268432978746
+        ],
+        "MI_vs_ANOVA": [
+          -0.0005996988632829103,
+          0.002508129263337746
+        ],
+        "MI_vs_SHAP": [
+          -0.00182861895868357,
+          0.0006792534163480384
+        ],
+        "RFE_vs_LASSO": [
+          0.003071879491459803,
+          0.006984416661748349
+        ],
+        "RFE_vs_ANOVA": [
+          -0.0013143115558202135,
+          0.0015537372352352663
+        ],
+        "RFE_vs_SHAP": [
+          -0.002536052344070813,
+          -8.167821225645579e-05
+        ],
+        "LASSO_vs_ANOVA": [
+          -0.006905392295115784,
+          -0.0028189388928273385
+        ],
+        "LASSO_vs_SHAP": [
+          -0.008458457307847337,
+          -0.004355410369910192
+        ],
+        "ANOVA_vs_SHAP": [
+          -0.0029216063480676374,
+          1.4238948213099371e-05
+        ]
+      }
+    },
+    "lr_k5": {
+      "auc_ci": {
+        "MI": [
+          0.69232839563622,
+          0.71417496807587
+        ],
+        "RFE": [
+          0.6860636860697007,
+          0.7074830392728206
+        ],
+        "LASSO": [
+          0.7021727872730307,
+          0.7229102712365446
+        ],
+        "ANOVA": [
+          0.6896709146255365,
+          0.711486840683414
+        ],
+        "SHAP": [
+          0.6952257355943332,
+          0.7168091981516094
+        ]
+      },
+      "diff_vs_all_ci": {
+        "MI": [
+          -0.044581249941519276,
+          -0.03106950146322704
+        ],
+        "RFE": [
+          -0.05254467351740261,
+          -0.03661857214759457
+        ],
+        "LASSO": [
+          -0.03513102200791823,
+          -0.02218852334778378
+        ],
+        "ANOVA": [
+          -0.04722463818446905,
+          -0.03394382731565007
+        ],
+        "SHAP": [
+          -0.04176265556771609,
+          -0.02836409577620159
+        ]
+      },
+      "pairwise_diff_ci": {
+        "MI_vs_RFE": [
+          -0.0025865594578460133,
+          0.014722527668166308
+        ],
+        "MI_vs_LASSO": [
+          -0.014180426973491419,
+          -0.003785884033014606
+        ],
+        "MI_vs_ANOVA": [
+          0.0019826029952284717,
+          0.0035095474449607865
+        ],
+        "MI_vs_SHAP": [
+          -0.004047161071375422,
+          -0.0015010094232064011
+        ],
+        "RFE_vs_LASSO": [
+          -0.021989373765301464,
+          -0.00943615815929103
+        ],
+        "RFE_vs_ANOVA": [
+          -0.012130175573343411,
+          0.0055475265091566054
+        ],
+        "RFE_vs_SHAP": [
+          -0.017683598759403767,
+          -0.00024860219295168664
+        ],
+        "LASSO_vs_ANOVA": [
+          0.00674106770371514,
+          0.017067956162174464
+        ],
+        "LASSO_vs_SHAP": [
+          0.0013344113373385648,
+          0.011647245003226966
+        ],
+        "ANOVA_vs_SHAP": [
+          -0.006552974024499903,
+          -0.004515085627854257
+        ]
+      }
+    },
+    "lr_k10": {
+      "auc_ci": {
+        "MI": [
+          0.6898983328339428,
+          0.7116866220795572
+        ],
+        "RFE": [
+          0.7189621540399808,
+          0.739613402882497
+        ],
+        "LASSO": [
+          0.7130518482732497,
+          0.7337281047030921
+        ],
+        "ANOVA": [
+          0.7134354803413409,
+          0.7337764027535014
+        ],
+        "SHAP": [
+          0.6989917057005206,
+          0.7206470579728358
+        ]
+      },
+      "diff_vs_all_ci": {
+        "MI": [
+          -0.04695122341706446,
+          -0.03371314907748311
+        ],
+        "RFE": [
+          -0.018611721061318448,
+          -0.0049352935280633685
+        ],
+        "LASSO": [
+          -0.02454806459528959,
+          -0.011219380925376814
+        ],
+        "ANOVA": [
+          -0.021651553239600524,
+          -0.013766195944934152
+        ],
+        "SHAP": [
+          -0.037927155545222066,
+          -0.02375947268260148
+        ]
+      },
+      "pairwise_diff_ci": {
+        "MI_vs_RFE": [
+          -0.03502103313143073,
+          -0.022423603392438894
+        ],
+        "MI_vs_LASSO": [
+          -0.02963761403735956,
+          -0.014667603476434745
+        ],
+        "MI_vs_ANOVA": [
+          -0.029343339370761355,
+          -0.01636133265497817
+        ],
+        "MI_vs_SHAP": [
+          -0.015136728024843855,
+          -0.003838217518839389
+        ],
+        "RFE_vs_LASSO": [
+          0.0015748360774020726,
+          0.010781835964976755
+        ],
+        "RFE_vs_ANOVA": [
+          -0.0011722774263385582,
+          0.013165291339047862
+        ],
+        "RFE_vs_SHAP": [
+          0.016235569302237393,
+          0.02268086097821433
+        ],
+        "LASSO_vs_ANOVA": [
+          -0.0074063992200563145,
+          0.007225362039770277
+        ],
+        "LASSO_vs_SHAP": [
+          0.007915317566136174,
+          0.018200816870953228
+        ],
+        "ANOVA_vs_SHAP": [
+          0.005824396909744181,
+          0.020498050296798985
+        ]
+      }
+    },
+    "lr_k15": {
+      "auc_ci": {
+        "MI": [
+          0.7121474949567181,
+          0.7333628711102147
+        ],
+        "RFE": [
+          0.7084543142438956,
+          0.7291454642358256
+        ],
+        "LASSO": [
+          0.7225669154141783,
+          0.7426220540401256
+        ],
+        "ANOVA": [
+          0.7177756671701123,
+          0.7379781256727562
+        ],
+        "SHAP": [
+          0.7015950310422671,
+          0.7229317044170893
+        ]
+      },
+      "diff_vs_all_ci": {
+        "MI": [
+          -0.022277957147880535,
+          -0.014326485806759055
+        ],
+        "RFE": [
+          -0.028516434173480775,
+          -0.015640698016818323
+        ],
+        "LASSO": [
+          -0.011094638784719455,
+          -0.005439849386449889
+        ],
+        "ANOVA": [
+          -0.01725201888974793,
+          -0.010131967813824925
+        ],
+        "SHAP": [
+          -0.03554200736236261,
+          -0.021760194894717266
+        ]
+      },
+      "pairwise_diff_ci": {
+        "MI_vs_RFE": [
+          -0.004191745255176471,
+          0.011139787752092822
+        ],
+        "MI_vs_LASSO": [
+          -0.014509416524478519,
+          -0.005558248118676729
+        ],
+        "MI_vs_ANOVA": [
+          -0.00836806621724905,
+          -0.0008173234983127752
+        ],
+        "MI_vs_SHAP": [
+          0.001852714771298622,
+          0.017924658553625166
+        ],
+        "RFE_vs_LASSO": [
+          -0.02104672682155815,
+          -0.00679956545197225
+        ],
+        "RFE_vs_ANOVA": [
+          -0.015696763074754642,
+          -0.0007209237530705134
+        ],
+        "RFE_vs_SHAP": [
+          0.004155393950860895,
+          0.008839123844653823
+        ],
+        "LASSO_vs_ANOVA": [
+          0.0018777162129078484,
+          0.008501663113355757
+        ],
+        "LASSO_vs_SHAP": [
+          0.012898883888809182,
+          0.027731452675694324
+        ],
+        "ANOVA_vs_SHAP": [
+          0.0067214182159317905,
+          0.022800271970339677
+        ]
+      }
+    },
+    "lr_k20": {
+      "auc_ci": {
+        "MI": [
+          0.7231148239260637,
+          0.7435463501462304
+        ],
+        "RFE": [
+          0.7036243753843295,
+          0.7242993097149552
+        ],
+        "LASSO": [
+          0.7289274741412164,
+          0.7494050986675043
+        ],
+        "ANOVA": [
+          0.7197762258571937,
+          0.739951295789416
+        ],
+        "SHAP": [
+          0.6984671637587424,
+          0.7193399910992141
+        ]
+      },
+      "diff_vs_all_ci": {
+        "MI": [
+          -0.010791220022512829,
+          -0.004884840834715662
+        ],
+        "RFE": [
+          -0.03332015905941987,
+          -0.020445156882181174
+        ],
+        "LASSO": [
+          -0.0035981515376235034,
+          -0.00028131054510934276
+        ],
+        "ANOVA": [
+          -0.014581725865574668,
+          -0.008302641882971718
+        ],
+        "SHAP": [
+          -0.03898210730058801,
+          -0.025112105875888066
+        ]
+      },
+      "pairwise_diff_ci": {
+        "MI_vs_RFE": [
+          0.012374660974149725,
+          0.02540253702297726
+        ],
+        "MI_vs_LASSO": [
+          -0.009118017076663173,
+          -0.002907191528195549
+        ],
+        "MI_vs_ANOVA": [
+          0.0017090798013098068,
+          0.00557268985883568
+        ],
+        "MI_vs_SHAP": [
+          0.01728244680400076,
+          0.03143883325794328
+        ],
+        "RFE_vs_LASSO": [
+          -0.03161018703138471,
+          -0.018753227030359684
+        ],
+        "RFE_vs_ANOVA": [
+          -0.02212228290875385,
+          -0.008342952018306142
+        ],
+        "RFE_vs_SHAP": [
+          0.0029085520546040383,
+          0.008020424846131587
+        ],
+        "LASSO_vs_ANOVA": [
+          0.006262626425655707,
+          0.01284825740154644
+        ],
+        "LASSO_vs_SHAP": [
+          0.02312322162174432,
+          0.037407383698380044
+        ],
+        "ANOVA_vs_SHAP": [
+          0.013254299957351121,
+          0.02788838277830641
+        ]
+      }
+    },
+    "lr_k25": {
+      "auc_ci": {
+        "MI": [
+          0.7252625611524689,
+          0.7454355585258051
+        ],
+        "RFE": [
+          0.7040509330209151,
+          0.7246203630686472
+        ],
+        "LASSO": [
+          0.7281083570124559,
+          0.7483420244495104
+        ],
+        "ANOVA": [
+          0.72316959007467,
+          0.7430873134297692
+        ],
+        "SHAP": [
+          0.7136426192923393,
+          0.7340942036643512
+        ]
+      },
+      "diff_vs_all_ci": {
+        "MI": [
+          -0.008355182951604551,
+          -0.003370841572617826
+        ],
+        "RFE": [
+          -0.03295100952314298,
+          -0.02066132931659139
+        ],
+        "LASSO": [
+          -0.003989901318967648,
+          -0.0014010282645614605
+        ],
+        "ANOVA": [
+          -0.009942345259870403,
+          -0.00544453635263836
+        ],
+        "SHAP": [
+          -0.023416478934983182,
+          -0.01132131126794721
+        ]
+      },
+      "pairwise_diff_ci": {
+        "MI_vs_RFE": [
+          0.015149501217606554,
+          0.026731796095567008
+        ],
+        "MI_vs_LASSO": [
+          -0.0053910119691246705,
+          -0.0005986998611957903
+        ],
+        "MI_vs_ANOVA": [
+          -0.00018911191636643008,
+          0.004127376533578166
+        ],
+        "MI_vs_SHAP": [
+          0.005393518063443398,
+          0.017660659430570266
+        ],
+        "RFE_vs_LASSO": [
+          -0.03056134511403147,
+          -0.017956122287108453
+        ],
+        "RFE_vs_ANOVA": [
+          -0.025177280692624017,
+          -0.012570834257127815
+        ],
+        "RFE_vs_SHAP": [
+          -0.012853991679772117,
+          -0.00632398159017438
+        ],
+        "LASSO_vs_ANOVA": [
+          0.0026713820025349943,
+          0.007291956464534235
+        ],
+        "LASSO_vs_SHAP": [
+          0.008619998045378233,
+          0.020927423697701845
+        ],
+        "ANOVA_vs_SHAP": [
+          0.003190419462594188,
+          0.01642849796411642
+        ]
+      }
+    },
+    "lr_k30": {
+      "auc_ci": {
+        "MI": [
+          0.7267028263145608,
+          0.7466052280507888
+        ],
+        "RFE": [
+          0.7156833492247283,
+          0.7366522831689212
+        ],
+        "LASSO": [
+          0.728273115698182,
+          0.7487775566083255
+        ],
+        "ANOVA": [
+          0.7261653059267842,
+          0.7464316237175591
+        ],
+        "SHAP": [
+          0.71518250619952,
+          0.7358862674648251
+        ]
+      },
+      "diff_vs_all_ci": {
+        "MI": [
+          -0.006078785872216083,
+          -0.0024466715236001477
+        ],
+        "RFE": [
+          -0.020554333364731652,
+          -0.009259172841521916
+        ],
+        "LASSO": [
+          -0.0032893729746394955,
+          -0.0011026627249055205
+        ],
+        "ANOVA": [
+          -0.006827916631593314,
+          -0.0028086919551443892
+        ],
+        "SHAP": [
+          -0.021145239421544493,
+          -0.009754869655851098
+        ]
+      },
+      "pairwise_diff_ci": {
+        "MI_vs_RFE": [
+          0.004371587736122984,
+          0.01681363647895166
+        ],
+        "MI_vs_LASSO": [
+          -0.003918828209165728,
+          -0.00018660174983732022
+        ],
+        "MI_vs_ANOVA": [
+          -0.0016391554789881356,
+          0.0025926528561753216
+        ],
+        "MI_vs_SHAP": [
+          0.0049649579837755505,
+          0.017569203308712495
+        ],
+        "RFE_vs_LASSO": [
+          -0.018502698093890785,
+          -0.006784759465942267
+        ],
+        "RFE_vs_ANOVA": [
+          -0.016372656020004258,
+          -0.004010859393922512
+        ],
+        "RFE_vs_SHAP": [
+          -0.0005588645903998074,
+          0.0017537020593405392
+        ],
+        "LASSO_vs_ANOVA": [
+          0.0004888641618110368,
+          0.0047454295153844745
+        ],
+        "LASSO_vs_SHAP": [
+          0.0074064891086157575,
+          0.01915032388939829
+        ],
+        "ANOVA_vs_SHAP": [
+          0.004470833301802324,
+          0.01700281130649403
+        ]
+      }
+    }
+  },
+  "bootstrap_note": "percentile CIs, descriptive: no multiplicity adjustment (review 1 A8)",
+  "per_module": {
+    "AAA": {
+      "n": 340,
+      "pass_rate": 0.7441176470588236,
+      "auc_xgb_k15": {
+        "MI": 0.7508518468038708,
+        "RFE": 0.7471264367816093,
+        "LASSO": 0.7280450683749035,
+        "ANOVA": 0.7465358229975921,
+        "SHAP": 0.750397528508473
+      },
+      "auc_xgb_all": 0.7442187996910636
+    },
+    "BBB": {
+      "n": 1741,
+      "pass_rate": 0.6616886846639862,
+      "auc_xgb_k15": {
+        "MI": 0.6579698995472552,
+        "RFE": 0.6931740473495567,
+        "LASSO": 0.6704351183738918,
+        "ANOVA": 0.670026144831164,
+        "SHAP": 0.6831715124504811
+      },
+      "auc_xgb_all": 0.6898388865308432
+    },
+    "CCC": {
+      "n": 1859,
+      "pass_rate": 0.5459924690693921,
+      "auc_xgb_k15": {
+        "MI": 0.8104405481754723,
+        "RFE": 0.8178740690589031,
+        "LASSO": 0.7999964980272221,
+        "ANOVA": 0.8177462470525063,
+        "SHAP": 0.8165911796978966
+      },
+      "auc_xgb_all": 0.8171246468844116
+    },
+    "DDD": {
+      "n": 1407,
+      "pass_rate": 0.5628997867803838,
+      "auc_xgb_k15": {
+        "MI": 0.8006118091483945,
+        "RFE": 0.8145479182064548,
+        "LASSO": 0.8108811694177548,
+        "ANOVA": 0.8028024143877801,
+        "SHAP": 0.8108770633160878
+      },
+      "auc_xgb_all": 0.8151176398127618
+    },
+    "EEE": {
+      "n": 995,
+      "pass_rate": 0.6874371859296482,
+      "auc_xgb_k15": {
+        "MI": 0.8238515635283279,
+        "RFE": 0.8149104003309451,
+        "LASSO": 0.820377578458472,
+        "ANOVA": 0.8184407965250747,
+        "SHAP": 0.8129360109813655
+      },
+      "auc_xgb_all": 0.811450518042158
+    },
+    "FFF": {
+      "n": 1779,
+      "pass_rate": 0.6278808319280494,
+      "auc_xgb_k15": {
+        "MI": 0.8332337102781242,
+        "RFE": 0.8396533117678721,
+        "LASSO": 0.8287885385703506,
+        "ANOVA": 0.8274943404187414,
+        "SHAP": 0.8375693417034732
+      },
+      "auc_xgb_all": 0.8435872954909974
+    },
+    "GGG": {
+      "n": 695,
+      "pass_rate": 0.6388489208633094,
+      "auc_xgb_k15": {
+        "MI": 0.6377552851656437,
+        "RFE": 0.6738631061340224,
+        "LASSO": 0.6663391479128531,
+        "ANOVA": 0.6134964645920822,
+        "SHAP": 0.6761736836438033
+      },
+      "auc_xgb_all": 0.6690714619001472
+    }
+  },
+  "auc_excl_undated_withdrawn": {
+    "n_excluded": 87,
+    "xgb": {
+      "all": 0.7681826083722797,
+      "MI": {
+        "5": 0.7335000569018596,
+        "10": 0.7491846960432597,
+        "15": 0.755707547740436,
+        "20": 0.7604552126359764,
+        "25": 0.7646891926343007,
+        "30": 0.7658271738190512
+      },
+      "RFE": {
+        "5": 0.7203717450008134,
+        "10": 0.7573603339377475,
+        "15": 0.7679205853902012,
+        "20": 0.7662821926750729,
+        "25": 0.7661711332386164,
+        "30": 0.7685704763133687
+      },
+      "LASSO": {
+        "5": 0.7523452695064727,
+        "10": 0.7575992265379521,
+        "15": 0.754536243124172,
+        "20": 0.761838975130303,
+        "25": 0.7634097688843606,
+        "30": 0.7640185235714833
+      },
+      "ANOVA": {
+        "5": 0.7205323415384022,
+        "10": 0.7399001719601077,
+        "15": 0.7571667220003646,
+        "20": 0.7562133078215862,
+        "25": 0.7604839435945757,
+        "30": 0.7616373543682033
+      },
+      "SHAP": {
+        "5": 0.7298312591037375,
+        "10": 0.7588274890195092,
+        "15": 0.7629655031356508,
+        "20": 0.7630374985494506,
+        "25": 0.7677831192344863,
+        "30": 0.7677422070215103
+      }
+    },
+    "rf": {
+      "all": 0.772046110220246,
+      "MI": {
+        "5": 0.7234846015503292,
+        "10": 0.7510214331831035,
+        "15": 0.7552786555748365,
+        "20": 0.7666535669177069,
+        "25": 0.7680248961317041,
+        "30": 0.7699482741934833
+      },
+      "RFE": {
+        "5": 0.716023233208463,
+        "10": 0.7635480751265842,
+        "15": 0.7669947540517932,
+        "20": 0.7673565793111111,
+        "25": 0.7679224335805204,
+        "30": 0.7691023070791738
+      },
+      "LASSO": {
+        "5": 0.7345177096956736,
+        "10": 0.7541948039641331,
+        "15": 0.7558697964481591,
+        "20": 0.7616406307055876,
+        "25": 0.764502581417824,
+        "30": 0.764330559703716
+      },
+      "ANOVA": {
+        "5": 0.7174824354712751,
+        "10": 0.7380850250435389,
+        "15": 0.758224754952366,
+        "20": 0.7616740381457522,
+        "25": 0.7665887122392315,
+        "30": 0.768959016323665
+      },
+      "SHAP": {
+        "5": 0.7194941626308912,
+        "10": 0.7549840932419857,
+        "15": 0.7650965505823928,
+        "20": 0.7660924731385139,
+        "25": 0.7677777986865975,
+        "30": 0.7704428051183
+      }
+    },
+    "lr": {
+      "all": 0.7387997986480657,
+      "MI": {
+        "5": 0.6981453802186735,
+        "10": 0.6957005044551468,
+        "15": 0.7206488615371656,
+        "20": 0.7310258901220612,
+        "25": 0.7331059163148385,
+        "30": 0.7345811922328513
+      },
+      "RFE": {
+        "5": 0.6912163466945171,
+        "10": 0.7246210425764804,
+        "15": 0.7141965211009569,
+        "20": 0.7094806674812145,
+        "25": 0.7096065124402251,
+        "30": 0.7214730984137823
+      },
+      "LASSO": {
+        "5": 0.708008275860215,
+        "10": 0.7183077364574695,
+        "15": 0.7306673972058946,
+        "20": 0.7370361210315993,
+        "25": 0.7362836835485972,
+        "30": 0.7367436309121368
+      },
+      "ANOVA": {
+        "5": 0.6954471903698756,
+        "10": 0.7215075419606409,
+        "15": 0.72576566044465,
+        "20": 0.7278873269253774,
+        "25": 0.7312482330180432,
+        "30": 0.7341498638163764
+      },
+      "SHAP": {
+        "5": 0.7008904748975431,
+        "10": 0.704994409504313,
+        "15": 0.7075444080929677,
+        "20": 0.7038806508138982,
+        "25": 0.71916916116354,
+        "30": 0.7209275462350011
+      }
+    }
+  },
+  "dev_pass_rate": 0.5669604602766557,
+  "holdout_pass_rate": 0.6189882032667876,
+  "dev_module_share": {
+    "BBB": 0.271,
+    "FFF": 0.2601,
+    "DDD": 0.1951,
+    "GGG": 0.1016,
+    "EEE": 0.0759,
+    "CCC": 0.0757,
+    "AAA": 0.0206
+  }
+}

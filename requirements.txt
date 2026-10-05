@@ -1,0 +1,20 @@
+# Versions of the environment that produced every output in code/results/
+# (Python 3.11.9, macOS 15 / arm64).
+#
+#   pip install -r requirements.txt
+#
+# Pins are exact rather than minimum-bound because feature selection is
+# sensitive to library internals: SHAP's TreeExplainer, sklearn's
+# mutual_info_classif k-NN estimator, and XGBoost's split selection have all
+# changed default behaviour across minor versions. A different set of versions
+# will still run, but is not guaranteed to reproduce the deposited results
+# bit-for-bit.
+
+numpy==2.2.6
+pandas==2.3.0
+scipy==1.16.0
+scikit-learn==1.7.0
+xgboost==3.0.2
+shap==0.48.0
+matplotlib==3.10.3
+joblib==1.5.1

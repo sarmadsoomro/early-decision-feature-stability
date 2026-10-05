@@ -1,0 +1,54 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software or the stored analysis outputs, please cite both
+  the software (this record) and the article it accompanies.
+title: >-
+  How Stable Are Feature Rankings at Early Decision Points? A Comparison of
+  Five Feature-Selection Methods with Student-Grouped Cross-Validation and a
+  Later-Presentation Holdout (analysis code)
+abstract: >-
+  Code and stored outputs for a comparison of the stability of feature
+  rankings from five feature-selection methods (ANOVA F-test, mutual
+  information, LASSO path entry order, recursive feature elimination with
+  XGBoost importances, and mean absolute SHAP values) on the Open University
+  Learning Analytics Dataset at days 30, 60 and 90 of each presentation, with
+  xAPI-Edu-Data as an end-of-term contrast. Includes student-grouped repeated
+  cross-validation, a later-presentation holdout with student-cluster
+  bootstrap intervals, a half-sampling bootstrap for the Nogueira stability
+  index, disjoint-sample agreement within and between presentations, a
+  marking-delay sensitivity analysis, and the per-fold, per-replicate and
+  per-repeat outputs from which the reported tables and figures are
+  regenerated.
+type: software
+license: MIT
+authors:
+  - given-names: Muhammad
+    family-names: Bilal
+    affiliation: School of Information Technology, Whitecliffe College, Christchurch, New Zealand
+    orcid: https://orcid.org/0009-0004-8200-7835
+    email: 20251211@mywhitecliffe.com
+  - given-names: Sarmad
+    family-names: Soomro
+    affiliation: School of Information Technology, Whitecliffe College, Christchurch, New Zealand
+    orcid: https://orcid.org/0000-0001-6677-1332
+    email: sarmads@whitecliffe.ac.nz
+keywords:
+  - feature selection
+  - selection stability
+  - learning analytics
+  - temporal validation
+  - student outcome prediction
+  - OULAD
+  - reproducibility
+repository-code: "https://github.com/sarmadsoomro/early-decision-feature-stability"
+references:
+  - type: article
+    title: >-
+      How Stable Are Feature Rankings at Early Decision Points? A Comparison
+      of Five Feature-Selection Methods with Student-Grouped Cross-Validation
+      and a Later-Presentation Holdout
+    authors:
+      - given-names: Muhammad
+        family-names: Bilal
+      - given-names: Sarmad
+        family-names: Soomro

@@ -1,0 +1,27 @@
+# Raw data: downloaded by the user, never committed (see dataset/README.md)
+dataset/*.csv
+dataset/*.zip
+
+# Run lock files
+*.lock
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# LaTeX build files
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.out
+*.synctex.gz
+*.toc
+
+# OS
+.DS_Store
+Thumbs.db
