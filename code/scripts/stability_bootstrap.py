@@ -58,14 +58,19 @@ def k_sets(p):
     return {"grid": K_GRID, "k_le_p3": list(range(1, p // 3 + 1)), "all": list(range(1, p // 2 + 1))}
 
 
-def replicate(X, y, groups, b):
+def replicate(X, y, groups, b, n_students=None):
+    """One half-sample replicate; `n_students` draws that many students instead
+    (OULAD only; used by stability_vs_n.py)."""
     rng = np.random.default_rng(RANDOM_STATE + b)
     if groups is None:  # xAPI: one row per student
+        assert n_students is None, "n_students is for OULAD"
         idx = np.sort(rng.choice(len(X), len(X) // 2, replace=False))
         g = pd.Series(idx)
     else:
         uniq = groups.unique()
-        pick = rng.choice(uniq, len(uniq) // 2, replace=False)
+        n = len(uniq) // 2 if n_students is None else n_students
+        assert 0 < n <= len(uniq), f"n_students {n} not in 1..{len(uniq)}"
+        pick = rng.choice(uniq, n, replace=False)
         rows = groups.groupby(groups).indices
         idx = np.concatenate([rows[s] for s in pick])
         g = groups.iloc[idx].reset_index(drop=True)

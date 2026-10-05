@@ -183,6 +183,7 @@ if __name__ == "__main__":
     ap.add_argument("--modules", choices=["all", "common"], default="all")
     ap.add_argument("--n-rep", type=int, default=N_REP)
     ap.add_argument("--n-students", type=int, default=None, help="all-modules only; default N_STUDENTS")
+    ap.add_argument("--tma-lag", type=int, default=0, help="sensitivity: as in temporal_design.py")
     ap.add_argument("--output-dir", default=os.path.join(RESULTS_DIR, "temporal_design"))
     a = ap.parse_args()
     require_data()
@@ -190,8 +191,9 @@ if __name__ == "__main__":
     os.makedirs(a.output_dir, exist_ok=True)
     assert a.n_students is None or a.modules == "all", "--n-students applies to --modules all"
     name = f"oulad_day{a.cutoff}_cross_cohort" + ("_common" if a.modules == "common" else "") \
-        + (f"_n{a.n_students}" if a.n_students not in (None, N_STUDENTS) else "")
-    X, y, meta, used = load_oulad_at(a.cutoff)
+        + (f"_n{a.n_students}" if a.n_students not in (None, N_STUDENTS) else "") \
+        + (f"_tmalag{a.tma_lag}" if a.tma_lag else "")
+    X, y, meta, used = load_oulad_at(a.cutoff, tma_lag=a.tma_lag)
     assert used["max_vle_date"] <= a.cutoff and used["max_assess_date"] <= a.cutoff, used
     dev, te = split_dev_holdout(meta)
     X = X.drop(columns=[c for c in X.columns if X.loc[dev, c].nunique() <= 1])  # as temporal_design
@@ -223,7 +225,7 @@ if __name__ == "__main__":
     recs = sorted(read_jsonl(path), key=lambda r: r["r"])
     assert [r["r"] for r in recs] == list(range(a.n_rep)), "repeats incomplete or duplicated"
     check_same_commit([r["sha"] for r in recs], name)
-    res = {"n_rep": a.n_rep, "design": design, "p": len(feats), "presentations": ORDER,
+    res = {"n_rep": a.n_rep, "design": design, "tma_lag": a.tma_lag, "p": len(feats), "presentations": ORDER,
            "note": "descriptive: one sample per presentation; spread over repeats is resampling noise. "
                    "Pairs differ in time, season and (modules=all) module mix; per-set composition in the jsonl.",
            "lasso_path": lasso_shortfall(recs),
